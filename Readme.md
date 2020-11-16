@@ -18,9 +18,10 @@ La deadline est **le 17 septembre 2021**
 ## Symfony
 
 Pour lancer Symfony, mettez-vous dans le dossier du repo, ouvrez un terminal depuis ce dossier et lancez la commande :
-`̀ ̀ bash
+```bash
 symfony server:start
-``̀
+```
+
 
 ## TODO
 
