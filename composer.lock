@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5712f69136bddf8e3c2196f17a92576a",
+    "content-hash": "440982968b211cb079e02a564d888cd0",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -5263,6 +5263,68 @@
                 }
             ],
             "time": "2020-10-28T21:31:18+00:00"
+        },
+        {
+            "name": "symfony/requirements-checker",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/requirements-checker.git",
+                "reference": "e3d5565eb69a4a2195905c8669f32e988c8e6be0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/requirements-checker/zipball/e3d5565eb69a4a2195905c8669f32e988c8e6be0",
+                "reference": "e3d5565eb69a4a2195905c8669f32e988c8e6be0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "bin": [
+                "bin/requirements-checker"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Requirements\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Check Symfony requirements and give recommendations",
+            "keywords": [
+                "configuration",
+                "distribution"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-09-16T06:15:56+00:00"
         },
         {
             "name": "symfony/routing",
