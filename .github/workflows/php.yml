@@ -33,6 +33,15 @@ jobs:
     - name : Check Symfony Requirements
       run : vendor/bin/requirements-checker
 
+    - name: Check PHP syntax errors
+      uses: overtrue/phplint@2.3.0
+
+    - name: Setup PHP with tools
+      uses: shivammathur/setup-php@v2.9.0
+      with:
+        php-version: '7.4'
+        tools: phpunit
+
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
