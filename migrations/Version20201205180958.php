@@ -21,9 +21,9 @@ final class Version20201205180958 extends AbstractMigration
             prenom VARCHAR(255) NOT NULL,
             pwd VARCHAR(255) NOT NULL,
             email VARCHAR(255) NOT NULL,
-            phone VARCHAR(10) NOT NULL,
+            phone VARCHAR(255) NOT NULL,
             roles VARCHAR(255) NOT NULL,
-            dateCreation DATETIME NOT NULL,
+            date_creation DATETIME NOT NULL,
             PRIMARY KEY(id)
         );
         ';
