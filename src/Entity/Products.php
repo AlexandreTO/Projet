@@ -92,7 +92,7 @@ class Products
 		return $this->quantite;
 	}
 	
-	public functiin getCategorie(): ?int
+	public function getCategorie(): ?int
 	{
 		return $this->categorie;
 	}
