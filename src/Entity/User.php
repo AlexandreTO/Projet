@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class User
 {
@@ -29,7 +30,7 @@ class User
     /** @ORM\Column(type="string", length=255)*/
     private $email;
 
-    /** @ORM\Column(type="string", length=10)*/
+    /** @ORM\Column(type="string", length=255)*/
     private $phone;
 
     /**
@@ -38,7 +39,7 @@ class User
     private $roles;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $dateCreation;
     
@@ -96,7 +97,7 @@ class User
 
     public function setEmail(string $email): self
     {
-        $this->Email = $email;
+        $this->email = $email;
 
         return $this;
     }
