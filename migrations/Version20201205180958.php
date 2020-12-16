@@ -28,6 +28,7 @@ final class Version20201205180958 extends AbstractMigration
         );
         ';
         $this->addSql($requete);
+        $this->addSql('ALTER TABLE user MODIFY phone varchar(255)');
     }
 
     public function down(Schema $schema) : void
