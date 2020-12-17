@@ -8,11 +8,7 @@ on:
 
 jobs:
   build:
-    name: Test on php ${{matrix.php_version}}
     runs-on: ubuntu-latest
-    strategy: 
-      matrix: 
-        php_version: '7.4'
 
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +20,7 @@ jobs:
       id: composer-cache
       uses: actions/cache@v2
       with:
-        php-version: ${{matrix.php_version}}
+        php-version: '7.4'
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
