@@ -12,7 +12,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20201205180958 extends AbstractMigration
 {
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         $requete = '
         CREATE TABLE user (
@@ -31,7 +31,7 @@ final class Version20201205180958 extends AbstractMigration
         $this->addSql('ALTER TABLE user MODIFY phone varchar(255)');
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         $this->addSql('DROP TABLE user');
     }

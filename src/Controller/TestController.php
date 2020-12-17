@@ -12,8 +12,6 @@ class TestController
     {
         $number = random_int(0, 100);
         $TesTea = 0;
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+        return new Response('<html><body>Lucky number: ' . $number . '</body></html>');
     }
 }
