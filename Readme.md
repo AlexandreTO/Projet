@@ -13,6 +13,8 @@ Le site doit être sécurisé et doit avoir un back office afin de gérer :
 - le chiffre d'affaire
 - Et plus d'options
 
+Les informations concernant la base de données sont disponibles sur le fichier [site.md](https://github.com/AlexandreTO/Projet/blob/master/site.md).
+
 La deadline est **le 17 septembre 2021**
 
 ## Symfony
@@ -31,7 +33,19 @@ Pour lancer Symfony, mettez-vous dans le dossier du repo, ouvrez un terminal dep
 symfony server:start
 ```
 
+Pour utiliser les fixtures, il faut l'installer via la commande :
+
+```bash
+ composer require --dev orm-fixtures
+```
+
+Ensuite pour installer Faker, on entre cette commande :
+
+```bash
+composer require fzaninotto/faker
+```
+
 ## TODO
 
 - Intégration de React dans le projet (chercher sur google comment faire)
-- Création d'une base de données pour stocker les produits et leurs informations.
+- Utilisation d'un serveur dédié pour la base de données
