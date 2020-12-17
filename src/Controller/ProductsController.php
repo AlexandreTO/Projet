@@ -10,13 +10,16 @@ use Doctrine\Persistence\ObjectRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Products;
 
+/**
+ * @Route("/products")
+ */
 class ProductsController extends AbstractController
 {
 	public function display_products()
 	{
-		/*$products = $this->getDoctrine()
+		$products = $this->getDoctrine()
 						 ->getManager()
-						 ->getRepository(Products::class)->products();*/
+						 ->getRepository(Products::class)->products();
 		
 		return $this->render("products.html.twig", ['products' => $products,]);
 	}

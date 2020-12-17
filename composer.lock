@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a798a570ba3d32d6af800e4c3640c8d",
+    "content-hash": "78427c4cb961cddc96f86d9e994a4a77",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -59,6 +59,7 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/composer/package-versions-deprecated/issues",
                 "source": "https://github.com/composer/package-versions-deprecated/tree/1.11.99.1"
@@ -77,6 +78,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-11T10:22:58+00:00"
         },
         {
@@ -234,6 +237,7 @@
                 "redis",
                 "xcache"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
                 "source": "https://github.com/doctrine/cache/tree/1.10.x"
@@ -252,6 +256,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-07-07T18:54:01+00:00"
         },
         {
@@ -392,6 +398,7 @@
                 "doctrine",
                 "php"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/common/issues",
                 "source": "https://github.com/doctrine/common/tree/3.1.0"
@@ -410,6 +417,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-12-03T21:02:31+00:00"
         },
         {
@@ -503,6 +512,7 @@
                 "sqlserver",
                 "sqlsrv"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
                 "source": "https://github.com/doctrine/dbal/tree/2.12.1"
@@ -521,6 +531,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-14T20:26:58+00:00"
         },
         {
@@ -613,6 +625,7 @@
                 "orm",
                 "persistence"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineBundle/issues",
                 "source": "https://github.com/doctrine/DoctrineBundle/tree/2.2.2"
@@ -631,6 +644,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-12-05T15:07:10+00:00"
         },
         {
@@ -701,6 +716,7 @@
                 "migrations",
                 "schema"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/DoctrineMigrationsBundle/issues",
                 "source": "https://github.com/doctrine/DoctrineMigrationsBundle/tree/3.0.x"
@@ -719,6 +735,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-06-15T06:04:38+00:00"
         },
         {
@@ -795,6 +813,7 @@
                 "event system",
                 "events"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/event-manager/issues",
                 "source": "https://github.com/doctrine/event-manager/tree/1.1.x"
@@ -813,6 +832,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-05-29T18:28:51+00:00"
         },
         {
@@ -890,6 +911,7 @@
                 "uppercase",
                 "words"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/inflector/issues",
                 "source": "https://github.com/doctrine/inflector/tree/2.0.x"
@@ -909,6 +931,9 @@
                 }
             ],
             "time": "2020-05-29T15:13:26+00:00"
+=======
+            "time": "2020-05-29T07:19:59+00:00"
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
         },
         {
             "name": "doctrine/instantiator",
@@ -959,6 +984,7 @@
                 "constructor",
                 "instantiate"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/instantiator/issues",
                 "source": "https://github.com/doctrine/instantiator/tree/1.4.0"
@@ -977,6 +1003,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-10T18:47:58+00:00"
         },
         {
@@ -1039,6 +1067,7 @@
                 "parser",
                 "php"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/lexer/issues",
                 "source": "https://github.com/doctrine/lexer/tree/1.2.1"
@@ -1057,6 +1086,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-05-25T17:44:05+00:00"
         },
         {
@@ -1142,6 +1173,7 @@
                 "migrations",
                 "php"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/doctrine/migrations/issues",
                 "source": "https://github.com/doctrine/migrations/tree/3.0.1"
@@ -1160,6 +1192,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-06-21T08:55:42+00:00"
         },
         {
@@ -1451,6 +1485,7 @@
                 "validation",
                 "validator"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
                 "source": "https://github.com/egulias/EmailValidator/tree/2.1.24"
@@ -1461,6 +1496,8 @@
                     "type": "github"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-14T15:56:27+00:00"
         },
         {
@@ -1568,12 +1605,6 @@
                 "code",
                 "laminas"
             ],
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
             "time": "2020-11-30T20:16:31+00:00"
         },
         {
@@ -1632,12 +1663,6 @@
                 "events",
                 "laminas"
             ],
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
-            ],
             "time": "2020-08-25T11:10:44+00:00"
         },
         {
@@ -1685,12 +1710,6 @@
                 "autoloading",
                 "laminas",
                 "zf"
-            ],
-            "funding": [
-                {
-                    "url": "https://funding.communitybridge.org/projects/laminas-project",
-                    "type": "community_bridge"
-                }
             ],
             "time": "2020-09-14T14:23:00+00:00"
         },
@@ -1775,6 +1794,7 @@
                 "logging",
                 "psr-3"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
                 "source": "https://github.com/Seldaek/monolog/tree/2.2.0"
@@ -1790,6 +1810,9 @@
                 }
             ],
             "time": "2020-12-14T13:15:25+00:00"
+=======
+            "time": "2020-07-23T08:41:23+00:00"
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
         },
         {
             "name": "ocramius/proxy-manager",
@@ -1859,11 +1882,15 @@
                 "proxy pattern",
                 "service proxies"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/Ocramius/ProxyManager/issues",
                 "source": "https://github.com/Ocramius/ProxyManager/tree/2.2.x"
             },
             "time": "2019-08-10T08:37:15+00:00"
+=======
+            "time": "2020-04-13T14:42:16+00:00"
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2463,6 +2490,7 @@
             ],
             "description": "Symfony Asset Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/asset/tree/v5.2.0-RC2"
             },
@@ -2480,6 +2508,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -2557,6 +2587,7 @@
                 "caching",
                 "psr6"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/cache/tree/v5.1.9"
             },
@@ -2574,6 +2605,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-20T22:06:42+00:00"
         },
         {
@@ -2636,6 +2669,7 @@
                 "interoperability",
                 "standards"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/cache-contracts/tree/v2.2.0"
             },
@@ -2653,6 +2687,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -2714,6 +2750,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/config/tree/v5.1.9"
             },
@@ -2731,6 +2768,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-16T15:58:32+00:00"
         },
         {
@@ -2805,6 +2844,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/console/tree/v5.1.9"
             },
@@ -2822,6 +2862,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -2892,6 +2934,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/dependency-injection/tree/v5.1.9"
             },
@@ -2909,6 +2952,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -2959,6 +3004,7 @@
             ],
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/deprecation-contracts/tree/master"
             },
@@ -2976,6 +3022,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -3070,6 +3118,7 @@
             ],
             "description": "Symfony Doctrine Bridge",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/doctrine-bridge/tree/v5.1.9"
             },
@@ -3087,6 +3136,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-09T19:27:47+00:00"
         },
         {
@@ -3140,6 +3191,7 @@
                 "env",
                 "environment"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/dotenv/tree/v5.2.0-RC2"
             },
@@ -3157,6 +3209,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-18T09:42:36+00:00"
         },
         {
@@ -3209,6 +3263,7 @@
             ],
             "description": "Symfony ErrorHandler Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/error-handler/tree/v5.1.9"
             },
@@ -3226,6 +3281,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -3294,6 +3351,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/event-dispatcher/tree/v5.1.9"
             },
@@ -3311,6 +3369,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-01T15:43:26+00:00"
         },
         {
@@ -3373,6 +3433,7 @@
                 "interoperability",
                 "standards"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.2.0"
             },
@@ -3390,6 +3451,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -3437,6 +3500,7 @@
             ],
             "description": "Symfony ExpressionLanguage Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/expression-language/tree/v5.1.9"
             },
@@ -3454,6 +3518,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -3499,6 +3565,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/filesystem/tree/v5.2.0-RC2"
             },
@@ -3516,6 +3583,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-12T09:58:18+00:00"
         },
         {
@@ -3560,6 +3629,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/finder/tree/v5.2.0-RC2"
             },
@@ -3577,6 +3647,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-18T09:42:36+00:00"
         },
         {
@@ -3627,6 +3699,7 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/symfony/flex/issues",
                 "source": "https://github.com/symfony/flex/tree/v1.11.0"
@@ -3645,6 +3718,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-12-03T10:57:35+00:00"
         },
         {
@@ -3729,6 +3804,7 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/form/tree/v5.1.9"
             },
@@ -3746,6 +3822,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -3874,6 +3952,7 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/framework-bundle/tree/v5.1.9"
             },
@@ -3891,6 +3970,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-27T14:08:52+00:00"
         },
         {
@@ -3958,6 +4039,7 @@
             ],
             "description": "Symfony HttpClient component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-client/tree/v5.1.9"
             },
@@ -3975,6 +4057,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T13:45:11+00:00"
         },
         {
@@ -4037,6 +4121,7 @@
                 "interoperability",
                 "standards"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-client-contracts/tree/v2.3.1"
             },
@@ -4054,6 +4139,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-14T17:08:19+00:00"
         },
         {
@@ -4110,6 +4197,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-foundation/tree/v5.1.9"
             },
@@ -4127,6 +4215,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-15T22:55:04+00:00"
         },
         {
@@ -4222,6 +4312,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/http-kernel/tree/v5.1.9"
             },
@@ -4239,6 +4330,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-29T09:27:52+00:00"
         },
         {
@@ -4310,6 +4403,7 @@
                 "l10n",
                 "localization"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/intl/tree/v5.2.0-RC2"
             },
@@ -4327,6 +4421,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-03T11:59:17+00:00"
         },
         {
@@ -4390,6 +4486,7 @@
             ],
             "description": "Symfony Mailer Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/mailer/tree/v5.1.9"
             },
@@ -4407,6 +4504,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -4465,6 +4564,7 @@
                 "mime",
                 "mime-type"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/mime/tree/v5.1.9"
             },
@@ -4482,6 +4582,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -4546,6 +4648,7 @@
             ],
             "description": "Symfony Monolog Bridge",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/monolog-bridge/tree/v5.1.9"
             },
@@ -4563,6 +4666,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -4626,6 +4731,7 @@
                 "log",
                 "logging"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/symfony/monolog-bundle/issues",
                 "source": "https://github.com/symfony/monolog-bundle/tree/v3.6.0"
@@ -4644,6 +4750,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-06T15:12:11+00:00"
         },
         {
@@ -4696,6 +4804,7 @@
                 "notification",
                 "notifier"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/notifier/tree/v5.1.9"
             },
@@ -4713,6 +4822,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:03:25+00:00"
         },
         {
@@ -4764,6 +4875,7 @@
                 "configuration",
                 "options"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/options-resolver/tree/v5.1.9"
             },
@@ -4781,6 +4893,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -4845,6 +4959,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.20.0"
             },
@@ -4862,6 +4977,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -4924,6 +5041,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-icu/tree/v1.20.0"
             },
@@ -4941,6 +5059,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5011,6 +5131,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.20.0"
             },
@@ -5028,6 +5149,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5095,6 +5218,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.20.0"
             },
@@ -5112,6 +5236,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5175,6 +5301,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.20.0"
             },
@@ -5192,6 +5319,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5254,6 +5383,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-php73/tree/v1.20.0"
             },
@@ -5271,6 +5401,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5337,6 +5469,7 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/polyfill-php80/tree/v1.20.0"
             },
@@ -5354,6 +5487,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -5399,6 +5534,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/process/tree/v5.1.9"
             },
@@ -5416,6 +5552,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-02T15:45:32+00:00"
         },
         {
@@ -5479,6 +5617,7 @@
                 "property path",
                 "reflection"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/property-access/tree/v5.1.9"
             },
@@ -5496,6 +5635,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-01T15:43:26+00:00"
         },
         {
@@ -5568,6 +5709,7 @@
                 "type",
                 "validator"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/property-info/tree/v5.1.9"
             },
@@ -5585,6 +5727,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -5633,6 +5777,7 @@
                 "configuration",
                 "distribution"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/symfony/requirements-checker/issues",
                 "source": "https://github.com/symfony/requirements-checker/tree/v2.0.0"
@@ -5651,6 +5796,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-09-16T06:15:56+00:00"
         },
         {
@@ -5724,6 +5871,7 @@
                 "uri",
                 "url"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/routing/tree/v5.1.9"
             },
@@ -5741,6 +5889,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-26T23:46:31+00:00"
         },
         {
@@ -5821,6 +5971,7 @@
             ],
             "description": "Symfony SecurityBundle",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-bundle/tree/v5.1.9"
             },
@@ -5838,6 +5989,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-01T15:43:26+00:00"
         },
         {
@@ -5909,6 +6062,7 @@
             ],
             "description": "Symfony Security Component - Core Library",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-core/tree/v5.1.9"
             },
@@ -5926,6 +6080,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -5980,6 +6136,7 @@
             ],
             "description": "Symfony Security Component - CSRF Library",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-csrf/tree/v5.2.0-RC2"
             },
@@ -5997,6 +6154,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-01T15:43:26+00:00"
         },
         {
@@ -6047,6 +6206,7 @@
             ],
             "description": "Symfony Security Component - Guard",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-guard/tree/v5.1.9"
             },
@@ -6064,6 +6224,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-01T15:43:26+00:00"
         },
         {
@@ -6127,6 +6289,7 @@
             ],
             "description": "Symfony Security Component - HTTP Integration",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/security-http/tree/v5.1.9"
             },
@@ -6144,6 +6307,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:33:29+00:00"
         },
         {
@@ -6222,6 +6387,7 @@
             ],
             "description": "Symfony Serializer Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/serializer/tree/v5.1.9"
             },
@@ -6239,6 +6405,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-27T05:53:16+00:00"
         },
         {
@@ -6301,6 +6469,7 @@
                 "interoperability",
                 "standards"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/service-contracts/tree/master"
             },
@@ -6318,6 +6487,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-09-07T11:33:47+00:00"
         },
         {
@@ -6363,6 +6534,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/stopwatch/tree/v5.1.9"
             },
@@ -6380,6 +6552,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-01T15:43:26+00:00"
         },
         {
@@ -6446,6 +6620,7 @@
                 "utf-8",
                 "utf8"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/string/tree/v5.1.9"
             },
@@ -6463,6 +6638,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -6536,6 +6713,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/translation/tree/v5.1.9"
             },
@@ -6553,6 +6731,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -6614,6 +6794,7 @@
                 "interoperability",
                 "standards"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/translation-contracts/tree/v2.3.0"
             },
@@ -6631,6 +6812,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-09-28T13:05:58+00:00"
         },
         {
@@ -6728,6 +6911,7 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/twig-bridge/tree/v5.1.9"
             },
@@ -6745,6 +6929,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -6815,6 +7001,7 @@
             ],
             "description": "Symfony TwigBundle",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/twig-bundle/tree/v5.1.9"
             },
@@ -6832,6 +7019,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -6923,6 +7112,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/validator/tree/v5.1.9"
             },
@@ -6940,6 +7130,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -7011,6 +7203,7 @@
                 "debug",
                 "dump"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/var-dumper/tree/v5.1.9"
             },
@@ -7028,6 +7221,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-26T23:46:31+00:00"
         },
         {
@@ -7084,6 +7279,7 @@
                 "instantiate",
                 "serialize"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/var-exporter/tree/v5.2.0-RC2"
             },
@@ -7101,6 +7297,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -7171,6 +7369,7 @@
                 "psr13",
                 "push"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/web-link/tree/v5.2.0-RC2"
             },
@@ -7188,6 +7387,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -7246,6 +7447,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/yaml/tree/v5.1.9"
             },
@@ -7263,6 +7465,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-28T10:57:20+00:00"
         },
         {
@@ -7322,6 +7526,7 @@
                 "extra",
                 "twig"
             ],
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/twigphp/twig-extra-bundle/tree/v3.1.1"
             },
@@ -7335,6 +7540,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-05-21T09:56:39+00:00"
         },
         {
@@ -7397,6 +7604,7 @@
             "keywords": [
                 "templating"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
                 "source": "https://github.com/twigphp/Twig/tree/v3.1.1"
@@ -7411,6 +7619,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-27T19:28:23+00:00"
         },
         {
@@ -7448,6 +7658,7 @@
             "license": [
                 "MIT"
             ],
+<<<<<<< HEAD
             "authors": [
                 {
                     "name": "Bernhard Schussek",
@@ -7465,6 +7676,9 @@
                 "source": "https://github.com/webmozart/assert/tree/master"
             },
             "time": "2020-07-08T17:02:28+00:00"
+=======
+            "time": "2020-08-25T07:21:11+00:00"
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
         },
         {
             "name": "zendframework/zend-code",
@@ -7654,20 +7868,6 @@
             "keywords": [
                 "database"
             ],
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdata-fixtures",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-09-01T07:13:28+00:00"
         },
         {
@@ -7730,20 +7930,6 @@
             "keywords": [
                 "Fixture",
                 "persistence"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdoctrine-fixtures-bundle",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-11-14T09:36:49+00:00"
         },
@@ -7965,6 +8151,7 @@
             ],
             "description": "Symfony BrowserKit Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/browser-kit/tree/v5.1.9"
             },
@@ -7982,6 +8169,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -8030,6 +8219,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/css-selector/tree/v5.2.0-RC2"
             },
@@ -8047,6 +8237,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         },
         {
@@ -8108,6 +8300,7 @@
             ],
             "description": "Symfony DebugBundle",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/debug-bundle/tree/v5.1.9"
             },
@@ -8125,6 +8318,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -8182,6 +8377,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/dom-crawler/tree/v5.2.0-RC2"
             },
@@ -8199,6 +8395,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-24T12:01:57+00:00"
         },
         {
@@ -8269,6 +8467,7 @@
                 "scaffold",
                 "scaffolding"
             ],
+<<<<<<< HEAD
             "support": {
                 "issues": "https://github.com/symfony/maker-bundle/issues",
                 "source": "https://github.com/symfony/maker-bundle/tree/v1.25.0"
@@ -8287,6 +8486,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-12-07T14:47:57+00:00"
         },
         {
@@ -8353,6 +8554,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/phpunit-bridge/tree/v5.2.0"
             },
@@ -8370,6 +8572,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-11-27T00:39:34+00:00"
         },
         {
@@ -8430,6 +8634,7 @@
             ],
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "support": {
                 "source": "https://github.com/symfony/web-profiler-bundle/tree/v5.1.9"
             },
@@ -8447,6 +8652,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
             "time": "2020-10-28T21:31:18+00:00"
         }
     ],
@@ -8460,6 +8667,10 @@
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
+<<<<<<< HEAD
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
+=======
+    "platform-dev": []
+>>>>>>> 03decb32c5a99eab8c07760fa037c7aa4d2c5adf
 }
