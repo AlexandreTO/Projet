@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Setup PHP with tools
+      uses: shivammathur/setup-php@2.9.0
+      with:
+        php-version: '7.4'
+        tools: phpunit
+        
     - uses: actions/checkout@v2
 
     - name: Validate composer.json and composer.lock
@@ -37,12 +43,6 @@ jobs:
       with:
         path: .
         options: --exclude=vendor
-
-    - name: Setup PHP with tools
-      uses: shivammathur/setup-php@2.9.0
-      with:
-        php-version: '7.4'
-        tools: phpunit
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
