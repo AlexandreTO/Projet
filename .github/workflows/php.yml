@@ -8,10 +8,15 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
+    - name: Setup PHP with tools
+      uses: shivammathur/setup-php@2.9.0
+      with:
+        php-version: '7.4'
+        tools: phpunit
+        
     - uses: actions/checkout@v2
 
     - name: Validate composer.json and composer.lock
@@ -26,10 +31,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --no-suggest
 
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+    
     - name : Check Symfony Requirements
       run : vendor/bin/requirements-checker
 
@@ -38,12 +43,6 @@ jobs:
       with:
         path: .
         options: --exclude=vendor
-
-    - name: Setup PHP with tools
-      uses: shivammathur/setup-php@2.9.0
-      with:
-        php-version: '7.4'
-        tools: phpunit
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
