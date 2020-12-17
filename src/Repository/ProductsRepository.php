@@ -8,7 +8,7 @@ use Doctrine\ORM\EntityRepository;
 
 class ProductsRepository extends EntityRepository
 {
-	public function products()
+	public function listProducts()
 	{
 		return $this->createQueryBuilder('a')
 					->getQuery()
