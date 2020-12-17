@@ -2,6 +2,12 @@
 {% block title %}Game Component | Produits{% endblock %}
 {% block body %}
 	<div class="card border-primary mb-3" style="max-width: 20rem;">
-		
+		{% for product in products %}
+			<div class="card-header">{{product.nom}}</div>
+			  <div class="card-body">
+				<!--<img src="/dossier/{{product.image}}">-->
+				<p class="card-text">{{product.description}} au prix de {{product.prix}} €</p>
+			  </div>
+		{% endfor %}
 	</div>
 {% endblock %}
