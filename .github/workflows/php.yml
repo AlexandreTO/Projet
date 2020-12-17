@@ -26,10 +26,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: composer install --prefer-dist --no-progress --no-suggest
-
     - name : Check Symfony Requirements
       run : vendor/bin/requirements-checker
 
