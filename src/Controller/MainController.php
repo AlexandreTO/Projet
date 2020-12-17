@@ -7,12 +7,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-/** @Route("/") */
+
 class MainController extends AbstractController
 {
-    /** @Route("/index") */
+    /** @Route("/") */
     public function index(): Response
     {
         return $this->render('index.html.twig');
     }
+	
+	/** @Route("/products") */
+	public function products(): Response
+	{
+		return $this->render("products.html.twig");
+	}
 }

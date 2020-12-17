@@ -2,13 +2,6 @@
 {% block title %}Game Component | Produits{% endblock %}
 {% block body %}
 	<div class="card border-primary mb-3" style="max-width: 20rem;">
-		{% for product in products %}
-			<div class="card-header">{{product.nom}}</div>
-			  <div class="card-body">
-			  <!-- je sais que les images en Symfony ne se chargent pas comme ca alors on verra par la suite -->
-			  <!--<img src="image/{{product.image}}">-->
-				<p class="card-text">{{product.description}}</p>
-			</div>
-		{% endfor %}
+		
 	</div>
 {% endblock %}
