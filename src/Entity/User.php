@@ -19,10 +19,10 @@ class User
     private $id;
 
     /** @ORM\Column(type="string", length=255)*/
-    private $nom;
+    private $lastName;
 
     /** @ORM\Column(type="string", length=255)*/
-    private $prenom;
+    private $name;
 
     /** @ORM\Column(type="string", length=255)*/
     private $pwd;
@@ -54,26 +54,26 @@ class User
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getLastName(): ?string
     {
-        return $this->nom;
+        return $this->lastName;
     }
 
-    public function setNom(string $nom): self
+    public function setLastName(string $lastName): self
     {
-        $this->nom = $nom;
+        $this->lastName = $lastName;
 
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getName(): ?string
     {
-        return $this->prenom;
+        return $this->name;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setName(string $name): self
     {
-        $this->prenom = $prenom;
+        $this->name = $name;
 
         return $this;
     }

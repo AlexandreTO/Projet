@@ -7,15 +7,25 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
+
+    // Unit Testing pour l'entité User
     public function testUser()
     {
         $user = new User();
-        $nom = "TO";
-        $prenom = "Alexanre";
+        $name = "TO";
+        $prenom = "Alexandre";
+        $email = "test@gmail.com";
+        $role = "admin";
 
-        $user->setNom($nom);
-        $user->setPrenom($prenom);
-        $this->assertEquals("TO", $user->getNom());
-        $this->assertEquals("ALexandre", $user->getPrenom());
+        $user->setLastName($name);
+        $user->setName($prenom);
+        $user->setEmail($email);
+        $user->setRoles($role);
+
+        $this->assertEquals("TO", $user->getLastName());
+        $this->assertEquals("Alexandre", $user->getName());
+        $this->assertEquals("test@gmail.com", $user->getEmail());
+        $this->assertEquals('admin', $user->getRoles());
+
     }
 }

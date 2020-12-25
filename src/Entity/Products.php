@@ -21,7 +21,7 @@ class Products
 	private $id;
 	
 	/** @ORM\Column(type="string", length=200)*/
-	private $nom;
+	private $name;
 	
 	/** @ORM\Column(type="string", length=255)*/
 	private $description;
@@ -109,9 +109,9 @@ class Products
 	
 	// setters
 	
-	public function setNom(string $nom): self
+	public function setNom(string $name): self
 	{
-		$this->nom = $nom;
+		$this->nom = $name;
 		
 		return $this;
 	}
