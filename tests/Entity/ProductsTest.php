@@ -12,7 +12,7 @@ class ProductsTest extends TestCase{
         $products = new Products;
         $name = "MSI";
         $prix = 23;
-        $status = 4;
+        $status = 0;
 
         $products->setName($name);
         $products->setPrix($prix);
