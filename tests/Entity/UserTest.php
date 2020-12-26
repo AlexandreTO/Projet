@@ -26,6 +26,5 @@ class UserTest extends TestCase
         $this->assertEquals("Alexandre", $user->getName());
         $this->assertEquals("test@gmail.com", $user->getEmail());
         $this->assertEquals('admin', $user->getRoles());
-
     }
 }

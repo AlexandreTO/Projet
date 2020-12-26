@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\UserRepository;
@@ -33,14 +35,10 @@ class User
     /** @ORM\Column(type="string", length=255)*/
     private $phone;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    /** @ORM\Column(type="string", length=255) */
     private $roles;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
+    /** @ORM\Column(type="datetime") */
     private $dateCreation;
     
     /** @ORM\PrePersist */

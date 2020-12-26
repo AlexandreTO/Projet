@@ -29,4 +29,4 @@ jobs:
         options: --exclude=vendor
     
     - name : PHP Unit Test
-      run: php bin/phpunit
+      run: php bin/phpunit --testdox

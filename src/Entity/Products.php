@@ -35,7 +35,7 @@ class Products
 	/** @ORM\Column(type="integer")*/
 	private $promo;
 	
-	/** @ORM\Column(type="integer")*/
+	/** @ORM\Column(type="boolean")*/
 	private $status;
 	
 	/** @ORM\Column(type="integer")*/
@@ -57,9 +57,9 @@ class Products
 		return $this->id;
 	}
 	
-	public function getNom(): ?string
+	public function getName(): ?string
 	{
-		return $this->nom;
+		return $this->name;
 	}
 	
 	public function getDescription(): ?string
@@ -82,7 +82,7 @@ class Products
 		return $this->promo;
 	}
 	
-	public function getStatus(): ?int
+	public function getStatus(): ?bool
 	{
 		return $this->status;
 	}
@@ -109,9 +109,9 @@ class Products
 	
 	// setters
 	
-	public function setNom(string $name): self
+	public function setName(string $name): self
 	{
-		$this->nom = $name;
+		$this->name = $name;
 		
 		return $this;
 	}
@@ -144,7 +144,7 @@ class Products
 		return $this;
 	}
 	
-	public function setStatus(int $status): self
+	public function setStatus(bool $status): self
 	{
 		$this->status = $status;
 		
