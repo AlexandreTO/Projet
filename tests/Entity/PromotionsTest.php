@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 class PromotionsTest extends TestCase
 {
 
+    // Test promotions
     public function testPromotions()
     {
         $promotions = new Promotions();

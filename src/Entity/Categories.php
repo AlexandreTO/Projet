@@ -28,24 +28,24 @@ class Categories
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
     private $status;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $date_creation;
+    private $dateCreation;
 
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $date_modify;
+    private $dateModification;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $name_image;
+    private $nameImage;
 
     public function getId(): ?int
     {
@@ -76,12 +76,12 @@ class Categories
         return $this;
     }
 
-    public function getStatus(): ?int
+    public function getStatus(): ?bool
     {
         return $this->status;
     }
 
-    public function setStatus(int $status): self
+    public function setStatus(bool $status): self
     {
         $this->status = $status;
 
@@ -90,36 +90,36 @@ class Categories
 
     public function getDateCreation(): ?\DateTimeInterface
     {
-        return $this->date_creation;
+        return $this->dateCreation;
     }
 
-    public function setDateCreation(\DateTimeInterface $date_creation): self
+    public function setDateCreation(\DateTimeInterface $dateCreation): self
     {
-        $this->date_creation = $date_creation;
+        $this->dateCreation = $dateCreation;
 
         return $this;
     }
 
     public function getDateModify(): ?\DateTimeInterface
     {
-        return $this->date_modify;
+        return $this->dateModification;
     }
 
-    public function setDateModify(?\DateTimeInterface $date_modify): self
+    public function setDateModify(?\DateTimeInterface $dateModification): self
     {
-        $this->date_modify = $date_modify;
+        $this->dateModification = $dateModification;
 
         return $this;
     }
 
     public function getNameImage(): ?string
     {
-        return $this->name_image;
+        return $this->nameImage;
     }
 
-    public function setNameImage(?string $name_image): self
+    public function setNameImage(?string $nameImage): self
     {
-        $this->name_image = $name_image;
+        $this->nameImage = $nameImage;
 
         return $this;
     }

@@ -5,11 +5,13 @@ namespace App\Tests\Entity;
 use App\Entity\Products;
 use PHPUnit\Framework\TestCase;
 
-class ProductsTest extends TestCase{
+class ProductsTest extends TestCase
+{
 
+    // Test Product
     public function testProducts()
     {
-        $products = new Products;
+        $products = new Products();
         $name = "MSI";
         $prix = 23;
         $status = 0;
