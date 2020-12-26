@@ -6,6 +6,7 @@
          backupGlobals="false"
          colors="true"
          bootstrap="tests/bootstrap.php"
+         stopOnFailure="false"
 >
     <php>
         <ini name="error_reporting" value="-1" />
@@ -16,7 +17,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="Project Test Suite">
+        <testsuite name="Projet Testing">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
