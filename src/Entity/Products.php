@@ -33,7 +33,7 @@ class Products
 	/** @ORM\Column(type="string", length=255)*/
 	private $image;
 
-	/** @ORM\Column(type="integer")*/
+	/** @ORM\Column(type="boolean")*/
 	private $promo;
 
 	/** @ORM\Column(type="boolean")*/
@@ -51,8 +51,11 @@ class Products
 	/** @ORM\Column(type="string", length=255)*/
 	private $slug;
 
-	/** @ORM\Column(type="string", length=255)*/
-	private $code_promo;
+	/** 
+	 * @ORM\ManyToOne(targetEntity="App\Entity\Promotions", inversedBy="codePromo")
+	 * @ORM\JoinColumn(onDelete="CASCADE")
+	 */
+	private $codePromo;
 
 	/**
 	 * @ORM\Column(type="date")
@@ -128,9 +131,9 @@ class Products
 		return $this->slug;
 	}
 
-	public function getCodepromo(): ?string
+	public function getCodepromo(): ?Promotions
 	{
-		return $this->code_promo;
+		return $this->codePromo;
 	}
 
 	public function getDateCreation(): ?\DateTimeInterface
@@ -174,7 +177,7 @@ class Products
 		return $this;
 	}
 
-	public function setPromo(int $promo): self
+	public function setPromo(string $promo): self
 	{
 		$this->promo = $promo;
 
@@ -195,7 +198,7 @@ class Products
 		return $this;
 	}
 
-	public function setCategorie(Categories $categorie): self
+	public function setCategorie(?Categories $categorie): self
 	{
 		$this->categorie = $categorie;
 
@@ -209,9 +212,9 @@ class Products
 		return $this;
 	}
 
-	public function setCodepromo(string $code_promo): self
+	public function setCodePromo(?Promotions $codePromo): self
 	{
-		$this->code_promo = $code_promo;
+		$this->codePromo = $codePromo;
 
 		return $this;
 	}

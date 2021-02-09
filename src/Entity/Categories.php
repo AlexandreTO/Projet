@@ -68,7 +68,6 @@ class Categories
         $this->dateModification = new \DateTime();
     }
 
-
     public function __construct()
     {
         $this->products = new ArrayCollection();;

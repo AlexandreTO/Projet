@@ -22,13 +22,14 @@ class CategorieFixtures extends Fixture
 
     private function loadCategorie(ObjectManager $manager)
     {
-        for ($i = 0; $i < self::NB_CATEGORIES; $i++) {
+        for ($i = 0; $i <= self::NB_CATEGORIES; $i++) {
 
             $categorie = new Categories();
             $categorie->setTitle($this->fakerGenerator->word);
             $categorie->setDescription($this->fakerGenerator->text($maxNbChar = 200));
             $categorie->setStatus($this->fakerGenerator->boolean);
             $categorie->setNameImage($this->fakerGenerator->imageUrl($width = 640, $height = 480));
+            // On ajoute une référence qu'on pourra réutiliser plus tard pour gérer les clés étrangères
             $this->setReference('categorie_' . $i, $categorie);
 
             $manager->persist($categorie);

@@ -6,6 +6,8 @@ namespace App\Entity;
 
 use App\Repository\PromotionsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass=PromotionsRepository::class)
@@ -26,7 +28,7 @@ class Promotions
     /** @ORM\Column(type="string", length=255)*/
     private $montant;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** @ORM\OneToMany(targetEntity="App\Entity\Products", mappedBy="codePromo", cascade={"remove"}) */
     private $codePromo;
 
     /**
@@ -38,6 +40,11 @@ class Promotions
     public function onPrePersist(): void
     {
         $this->dateCreation = new \DateTime();
+    }
+
+    public function __construct()
+    {
+        $this->codePromo = new ArrayCollection();;
     }
 
     public function getId(): ?int
@@ -69,14 +76,8 @@ class Promotions
         return $this->montant;
     }
 
-    public function setCodePromo(string $codePromo): self
-    {
-        $this->codePromo = $codePromo;
-
-        return $this;
-    }
-
-    public function getCodePromo(): ?string
+    /** @return Collection|Products[] */
+    public function getCodePromo(): Collection
     {
         return $this->codePromo;
     }
