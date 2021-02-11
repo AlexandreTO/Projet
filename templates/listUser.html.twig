@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <table>
-        <tr>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Email</th>
-            <th>Téléphone</th>
-        </tr>
-        {% for user in users %}
-        <tr>
-            <td>{{user.nom}}</td>
-            <td>{{user.prenom}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.phone}}</td>
-        </tr>
-        {% endfor %}   
-    </table>
+	<table>
+		<tr>
+			<th>Nom</th>
+			<th>Prénom</th>
+			<th>Email</th>
+			<th>Téléphone</th>
+		</tr>
+		{% for user in users %}
+			<tr>
+				<td>{{user.lastName}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.phone}}</td>
+			</tr>
+		{% endfor %}
+	</table>
 {% endblock %}

@@ -15,7 +15,7 @@ class UserController extends AbstractController
     {
         return $this->render(
             'listUser.html.twig',
-            ['users' => $em->getRepository(User::class)->findBy([], ['nom' => 'ASC'])]
+            ['users' => $em->getRepository(User::class)->findBy([], ['name' => 'ASC'])]
         );
     }
 }

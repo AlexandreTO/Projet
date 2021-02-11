@@ -4,15 +4,15 @@
 
 namespace App\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use App\Entity\Products;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
-class ProductsRepository extends EntityRepository
+
+class ProductsRepository extends ServiceEntityRepository
 {
-	public function listProducts()
+	public function __construct(ManagerRegistry $registry)
 	{
-		return $this->createQueryBuilder('a')
-					->getQuery()
-					->getResult();
+		parent::__construct($registry, Products::class);
 	}
-
 }

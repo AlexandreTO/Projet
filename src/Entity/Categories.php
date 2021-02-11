@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\CategoriesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass=CategoriesRepository::class)
+ * @ORM\HasLifecycleCallbacks()
  */
 class Categories
 {
@@ -46,6 +49,29 @@ class Categories
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $nameImage;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Products", mappedBy="categorie", cascade={"remove"})
+     */
+    private $products;
+
+    /** @ORM\PrePersist */
+    public function onPrePersist(): void
+    {
+        $this->dateCreation = new \DateTime();
+        $this->dateModification = new \DateTime();
+    }
+
+    /**@ORM\PreUpdate */
+    public function onPreUpdate(): void
+    {
+        $this->dateModification = new \DateTime();
+    }
+
+    public function __construct()
+    {
+        $this->products = new ArrayCollection();;
+    }
 
     public function getId(): ?int
     {
@@ -91,6 +117,12 @@ class Categories
     public function getDateCreation(): ?\DateTimeInterface
     {
         return $this->dateCreation;
+    }
+
+    /** @return Collection|Products[] */
+    public function getProducts(): Collection
+    {
+        return $this->products;
     }
 
     public function setDateCreation(\DateTimeInterface $dateCreation): self
