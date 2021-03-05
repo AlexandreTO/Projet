@@ -34,4 +34,9 @@ final class Version20210209101836 extends AbstractMigration
         $this->addSql('ALTER TABLE products ADD code_promo VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, DROP code_promo_id, CHANGE promo promo INT NOT NULL');
         $this->addSql('ALTER TABLE promotions ADD code_promo VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

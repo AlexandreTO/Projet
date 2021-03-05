@@ -28,4 +28,9 @@ final class Version20210208123352 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE products DROP date_creation, DROP date_modification');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }
