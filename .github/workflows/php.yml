@@ -14,7 +14,6 @@ jobs:
     - name: Setup PHP with tools
       uses: shivammathur/setup-php@2.9.0
       with:
-        php-version: '7.4'
         tools: phpunit
         
     - uses: actions/checkout@v2
