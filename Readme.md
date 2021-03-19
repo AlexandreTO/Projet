@@ -42,7 +42,7 @@ Pour utiliser les fixtures, il faut l'installer via la commande :
 Ensuite pour installer Faker, on entre cette commande :
 
 ```bash
-composer require fzaninotto/faker
+composer require fakerphp/faker
 ```
 
 Pour éviter de commit les identifiants et le nom de la base de données dans le fichier .env, il faut créer un nouveau fichier qui s'appellera **.env.local** qui contient le même contenu que .env. Il faudra ensuite remplacé les identifiants, mots de passe et le nom de la base de données dans **.env.local** et non dans .env. Cela permet de protéger notre base de données.
