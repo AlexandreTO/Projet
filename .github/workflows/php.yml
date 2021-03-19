@@ -2,38 +2,36 @@ name: PHP Composer
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Setup PHP with tools
-      uses: shivammathur/setup-php@2.9.0
-      with:
-        php-version: '7.4'
-        tools: phpunit
-        
-    - uses: actions/checkout@v2
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@2.9.0
+        with:
+          tools: phpunit
 
-    - name: Validate composer.json and composer.lock
-      run: composer validate
+      - uses: actions/checkout@v2
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Validate composer.json and composer.lock
+        run: composer validate
 
+      - name: Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
-    
-    - name : Check Symfony Requirements
-      run : vendor/bin/requirements-checker
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
+
+      - name: Check Symfony Requirements
+        run: vendor/bin/requirements-checker

@@ -12,12 +12,12 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20210208100700 extends AbstractMigration
 {
-    public function getDescription() : string
+    public function getDescription(): string
     {
         return '';
     }
 
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE categories CHANGE status status TINYINT(1) NOT NULL, CHANGE date_modify date_modification DATE DEFAULT NULL');
@@ -27,7 +27,7 @@ final class Version20210208100700 extends AbstractMigration
         $this->addSql('ALTER TABLE user ADD last_name VARCHAR(255) NOT NULL, ADD name VARCHAR(255) NOT NULL, DROP nom, DROP prenom, CHANGE phone phone VARCHAR(255) NOT NULL');
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE categories CHANGE status status INT NOT NULL, CHANGE date_modification date_modify DATE DEFAULT NULL');
@@ -35,5 +35,10 @@ final class Version20210208100700 extends AbstractMigration
         $this->addSql('DROP INDEX IDX_B3BA5A5ABCF5E72D ON products');
         $this->addSql('ALTER TABLE products ADD categorie INT NOT NULL, DROP categorie_id, CHANGE status status INT NOT NULL, CHANGE name nom VARCHAR(200) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`');
         $this->addSql('ALTER TABLE user ADD nom VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, ADD prenom VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, DROP last_name, DROP name, CHANGE phone phone VARCHAR(255) CHARACTER SET utf8mb4 DEFAULT NULL COLLATE `utf8mb4_unicode_ci`');
+    }
+
+    public function isTransactional(): bool
+    {
+        return false;
     }
 }

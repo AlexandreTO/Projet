@@ -29,4 +29,9 @@ final class Version20201217103935 extends AbstractMigration
     {
         $this->addSql('DROP TABLE promotions');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }
