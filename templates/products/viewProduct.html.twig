@@ -19,10 +19,6 @@
 				</b>
 				{{ product.description }}
 				<form class="mt-4 p-4 bg-light" method="post">
-					<div class="form-group">
-						<label for="quantity">Quantity</label>
-						<input type="number" class="form-control" id="quantity">
-					</div>
 					<a class="btn btn-info" href="{{path('cart_add', {'id': product.id})}}">Add to Cart</a>
 				</form>
 			</div>
