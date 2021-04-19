@@ -46,6 +46,19 @@ class CartService
         return $cartWithData;
     }
 
+    public function remove(int $id)
+    {
+        // Retrieve the cart session
+        $cart = $this->session->get('cart', []);
+
+        if (!empty($cart[$id])) {
+            // Remove the product with his id with unset
+            unset($cart[$id]);
+        }
+
+        $this->session->set('cart', $cart);
+    }
+
     public function getTotalPrice(): float
     {
         $total = 0;

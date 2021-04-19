@@ -8,9 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CartController extends AbstractController
 {
-    /**
-     * @Route("/cart", name="cart_index")
-     */
+
+    /** @Route("/cart", name="cart_index") */
     public function index(CartService $cartService)
     {
         return $this->render('cart/cart.html.twig', [
@@ -23,6 +22,13 @@ class CartController extends AbstractController
     public function addProduct(int $id, CartService $cartService)
     {
         $cartService->add($id);
+        return $this->redirectToRoute('cart_index');
+    }
+
+    /** @Route("/cart/remove/{id}", name="cart_remove") */
+    public function removeProduct(int $id, CartService $cartService)
+    {
+        $cartService->remove($id);
         return $this->redirectToRoute('cart_index');
     }
 }
