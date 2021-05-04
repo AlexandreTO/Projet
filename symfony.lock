@@ -29,6 +29,9 @@
     "doctrine/dbal": {
         "version": "2.12.1"
     },
+    "doctrine/deprecations": {
+        "version": "v0.5.3"
+    },
     "doctrine/doctrine-bundle": {
         "version": "2.0",
         "recipe": {
@@ -95,6 +98,9 @@
     },
     "egulias/email-validator": {
         "version": "2.1.24"
+    },
+    "fakerphp/faker": {
+        "version": "v1.13.0"
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"

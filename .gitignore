@@ -24,3 +24,4 @@
 *.phplint-cache
 phpcs.xml.dist
 /.idea *
+/.vscode/

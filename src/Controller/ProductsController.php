@@ -4,20 +4,28 @@
 
 namespace App\Controller;
 
+use App\Entity\Products;
 use Symfony\Component\HttpFoundation\Response;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Entity\Products;
+use App\Repository\ProductsRepository;
 
 class ProductsController extends AbstractController
 {
-	/** @Route("/products") */
-	public function listProducts(EntityManagerInterface $em): Response
+	/** @Route("/products", name="list_products") */
+	public function listProducts(ProductsRepository $productsRepository): Response
 	{
 		return $this->render(
-			'products.html.twig',
-			['products' => $em->getRepository(Products::class)->findBy([], ['name' => 'ASC'])]
+			'products/products.html.twig',
+			['products' => $productsRepository->findBy([], ['name' => 'ASC'])]
 		);
+	}
+
+	/** @Route("/products/{id}", name="view_product") */
+	public function viewProduct(Products $product): Response
+	{
+		return $this->render('products/viewProduct.html.twig', [
+			'product' => $product,
+		]);
 	}
 }
