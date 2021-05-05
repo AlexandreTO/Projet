@@ -1,6 +1,7 @@
 # Projet e-commerce
 
-![PHP 7.4](https://img.shields.io/badge/PHP-7.4-orange?style=for-the-badge&logo=appveyor)
+![PHP 8.0](https://img.shields.io/badge/PHP-8.0-blue)
+![Symfony](https://img.shields.io/badge/Symfony-5.0-brightgreen)
 
 ## Objectif
 
