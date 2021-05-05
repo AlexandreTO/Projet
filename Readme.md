@@ -51,5 +51,4 @@ Pour éviter de commit les identifiants et le nom de la base de données dans le
 
 - Intégration de React dans le projet (chercher sur google comment faire)
 - Utilisation d'un serveur dédié pour la base de données
-- Faire les liaisons entre les tables
 - Crypter les mots de passes
