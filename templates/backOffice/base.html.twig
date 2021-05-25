@@ -7,7 +7,7 @@
 			{% endblock %}
 		</title>
 		{% block stylesheets %}
-			<link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.css"/>
+			<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.css"/>
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"/>
 		{% endblock %}
 	</head>
@@ -26,13 +26,13 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('list_products') }}">Produits</a>
+						<a class="nav-link" href="{{ path('back_list_products') }}">Produits</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
+						<a class="nav-link" href="{{ path('list_users') }}">Utilisateurs</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ path('back_office') }}">Back</a>
+						<a class="nav-link" href="{{ path('front') }}">Front</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>

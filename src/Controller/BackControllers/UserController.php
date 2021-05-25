@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\BackControllers;
 
 use App\Entity\User;
 use Symfony\Component\Routing\Annotation\Route;
@@ -10,11 +10,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
-    /** @Route("/user", name="list_user") */
+    /** @Route("back/users", name="list_users") */
     public function listUser(EntityManagerInterface $em): Response
     {
         return $this->render(
-            'listUser.html.twig',
+            'backOffice/users/listUser.html.twig',
             ['users' => $em->getRepository(User::class)->findBy([], ['name' => 'ASC'])]
         );
     }

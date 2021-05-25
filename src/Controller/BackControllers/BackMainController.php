@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Controller\BackControllers;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MainController extends AbstractController
+class BackMainController extends AbstractController
 {
-	/** @Route("/", name="front") */
+	/** @Route("/back", name="back_office") */
 	public function index(): Response
 	{
-		return $this->render('index.html.twig', ['content' => 'coucou',]);
+		return $this->render('backOffice/index.html.twig', ['content' => 'coucou',]);
 	}
 }
