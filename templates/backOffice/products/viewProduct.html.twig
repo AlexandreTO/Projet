@@ -1,0 +1,26 @@
+{% extends "backOffice/base.html.twig" %}
+
+{% block title %}
+	Game Component | {{ product.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row mt-3 mb-4">
+			<div class="col-md-4">
+				<img src="https://via.placeholder.com/600x400" alt="{{ product.name }}" class="img-fluid">
+			</div>
+			<div class="col-md-8">
+				<h1 class="mt-4 mt-md-0">{{ product.name }}</h1>
+				<h2>{{ product.prix }}
+					€</h2>
+				<hr>
+				<b>Description:
+				</b>
+				{{ product.description }}
+        		<a href="{{ path('modify_product', {'id': product.id}) }}">Modifier</a>
+				<a href="{{ path('delete_product', {'id': product.id}) }}">Supprimer</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}
