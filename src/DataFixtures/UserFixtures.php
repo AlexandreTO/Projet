@@ -7,11 +7,18 @@ use Faker\Factory;
 use Faker\Generator;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends Fixture
 {
     private ?Generator $fakerGenerator = null;
     public const NB_USERS = 5;
+    private $encoder;
+
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder = $encoder;
+    }
 
     public function load(ObjectManager $manager)
     {
@@ -23,13 +30,15 @@ class UserFixtures extends Fixture
     private function loadUser(ObjectManager $manager)
     {
         for ($i = 0; $i < self::NB_USERS; $i++) {
+            $roles = array('Admin', 'User');
             $user = new User();
             $user->setLastName($this->fakerGenerator->lastName());
+            $user->setUsername($this->fakerGenerator->userName);
             $user->setName($this->fakerGenerator->name());
-            $user->setPwd($this->fakerGenerator->md5());
+            $user->setPassword($this->encoder->encodePassword($user, $this->fakerGenerator->word()));
             $user->setEmail($this->fakerGenerator->email);
             $user->setPhone($this->fakerGenerator->phoneNumber);
-            $user->setRoles($this->fakerGenerator->jobTitle);
+            $user->setRoles($this->fakerGenerator->words());
 
             $manager->persist($user);
         }

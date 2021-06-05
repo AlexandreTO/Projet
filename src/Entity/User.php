@@ -6,12 +6,13 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\HasLifecycleCallbacks()
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -23,24 +24,28 @@ class User
     /** @ORM\Column(type="string", length=255)*/
     private $lastName;
 
+    /** @ORM\Column(type="string", length=180, unique=true) */
+    private $username;
+
     /** @ORM\Column(type="string", length=255)*/
     private $name;
 
     /** @ORM\Column(type="string", length=255)*/
-    private $pwd;
+    private $password;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** @ORM\Column(type="string", length=255, unique=true)*/
     private $email;
 
     /** @ORM\Column(type="string", length=255)*/
     private $phone;
 
-    /** @ORM\Column(type="string", length=255) */
-    private $roles;
+    /** @ORM\Column(type="json") */
+    private $roles = [];
 
     /** @ORM\Column(type="datetime") */
     private $dateCreation;
-    
+
+
     /** @ORM\PrePersist */
     public function onPrePersist(): void
     {
@@ -64,6 +69,18 @@ class User
         return $this;
     }
 
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
     public function getName(): ?string
     {
         return $this->name;
@@ -76,14 +93,14 @@ class User
         return $this;
     }
 
-    public function getPwd(): ?string
+    public function getPassword(): ?string
     {
-        return $this->pwd;
+        return $this->password;
     }
 
-    public function setPwd(string $pwd): self
+    public function setPassword(string $password): self
     {
-        $this->pwd = $pwd;
+        $this->password = $password;
 
         return $this;
     }
@@ -112,12 +129,15 @@ class User
         return $this;
     }
 
-    public function getRoles(): ?string
+    public function getRoles(): ?array
     {
-        return $this->roles;
+        $roles = $this->roles;
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
-    public function setRoles(string $roles): self
+    public function setRoles(array $roles): self
     {
         $this->roles = $roles;
 
@@ -134,5 +154,13 @@ class User
         $this->dateCreation = $dateCreation;
 
         return $this;
+    }
+
+    public function getSalt()
+    {
+    }
+
+    public function eraseCredentials()
+    {
     }
 }
