@@ -69,6 +69,7 @@ class User implements UserInterface
         return $this;
     }
 
+    /** @see UserInterface */
     public function getUsername(): ?string
     {
         return $this->username;
@@ -93,6 +94,7 @@ class User implements UserInterface
         return $this;
     }
 
+    /** @see UserInterface */
     public function getPassword(): ?string
     {
         return $this->password;
@@ -156,10 +158,12 @@ class User implements UserInterface
         return $this;
     }
 
+    /** @see UserInterface */
     public function getSalt()
     {
     }
 
+    /** @see UserInterface */
     public function eraseCredentials()
     {
     }

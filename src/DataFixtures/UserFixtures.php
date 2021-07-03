@@ -15,9 +15,9 @@ class UserFixtures extends Fixture
     public const NB_USERS = 5;
     private $encoder;
 
-    public function __construct(UserPasswordEncoderInterface $encoder)
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
-        $this->encoder = $encoder;
+        $this->passwordEncoder = $passwordEncoder;
     }
 
     public function load(ObjectManager $manager)
@@ -30,12 +30,14 @@ class UserFixtures extends Fixture
     private function loadUser(ObjectManager $manager)
     {
         for ($i = 0; $i < self::NB_USERS; $i++) {
-            $roles = array('Admin', 'User');
             $user = new User();
             $user->setLastName($this->fakerGenerator->lastName());
             $user->setUsername($this->fakerGenerator->userName);
             $user->setName($this->fakerGenerator->name());
-            $user->setPassword($this->encoder->encodePassword($user, $this->fakerGenerator->word()));
+            $user->setPassword($this->passwordEncoder->encodePassword(
+                $user,
+                $this->fakerGenerator->word()
+            ));
             $user->setEmail($this->fakerGenerator->email);
             $user->setPhone($this->fakerGenerator->phoneNumber);
             $user->setRoles($this->fakerGenerator->words());

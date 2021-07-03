@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %} 
+{% block body %}
+{{ form_start(form) }}
+    <div>
+	{{ form_errors(form) }}
+    </div>
+    <div class='container'>
+        <div class="form-control">
+	        <div>
+		        {{ form_label(form.lastName) }}
+                {{ form_widget(form.lastName) }}
+	        </div>
+            <div>
+		        {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+	        </div>
+            <div>
+                {{ form_label(form.username) }}
+                {{ form_widget(form.username) }}
+            </div>
+            <div>
+                {{ form_label(form.password) }}
+               {{ form_widget(form.password) }}
+            </div>
+            <div>
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+            <div>
+                {{ form_label(form.phone) }}
+                {{ form_widget(form.phone) }}
+            </div>
+        <button type="submit" class="btn btn-primary">Create the user</button>
+        </div>
+    </div>
+{{ form_end(form) }}
+{% endblock %}
