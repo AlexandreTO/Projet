@@ -1,37 +1,60 @@
 {% extends 'base.html.twig' %} 
 {% block body %}
-{{ form_start(form) }}
-    <div>
-	{{ form_errors(form) }}
-    </div>
-    <div class='container'>
-        <div class="form-control">
-	        <div>
+<div class='container'>
+    {{ form_start(form) }}
+        <h1 class="text-center">Inscription </h1>
+	    <div class="form-row">
+            <div class='form-group col-md-6'>
 		        {{ form_label(form.lastName) }}
-                {{ form_widget(form.lastName) }}
-	        </div>
-            <div>
+                {{ form_widget(
+                   form.lastName,
+                    {'attr' : {'class': 'form-control', 'placeholder': 'Nom de famile'}}
+                ) }}
+                {{ form_errors(form) }}
+            </div>
+            <div class="form-group col-md-6">
 		        {{ form_label(form.name) }}
-                {{ form_widget(form.name) }}
-	        </div>
-            <div>
-                {{ form_label(form.username) }}
-                {{ form_widget(form.username) }}
+                {{ form_widget(
+                    form.name,
+                     {'attr' : {'class': 'form-control', 'placeholder': 'Prénom'}}
+                ) }}
+                {{ form_errors(form) }}
             </div>
-            <div>
-                {{ form_label(form.password) }}
-               {{ form_widget(form.password) }}
-            </div>
-            <div>
+	    </div>
+        <div class="form-group">
+            {{ form_label(form.username) }}
+            {{ form_widget(
+                form.username,
+                {'attr' : {'class': 'form-control', 'placeholder': 'Nom d\'utilisateur'}}
+            ) }}
+            {{ form_errors(form) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.password) }}
+            {{ form_widget(
+                form.password,
+                {'attr' : {'class': 'form-control', 'placeholder': 'Mot de passe'}}
+            ) }}
+            {{ form_errors(form) }}
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
                 {{ form_label(form.email) }}
-                {{ form_widget(form.email) }}
+                {{ form_widget(
+                    form.email,
+                    {'attr' : {'class': 'form-control', 'placeholder': 'Email'}}
+                ) }}
+                {{ form_errors(form) }}
             </div>
-            <div>
+            <div class="form-group col-md-6">
                 {{ form_label(form.phone) }}
-                {{ form_widget(form.phone) }}
+                {{ form_widget(
+                    form.phone,
+                    {'attr' : {'class': 'form-control', 'placeholder': 'Téléphone'}}
+                ) }}
+                {{ form_errors(form) }}
             </div>
         <button type="submit" class="btn btn-primary">Create the user</button>
-        </div>
-    </div>
+ </div>
 {{ form_end(form) }}
 {% endblock %}

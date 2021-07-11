@@ -16,12 +16,12 @@ class AddUserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('lastName', TextType::class)
-            ->add('name', TextType::class)
-            ->add('username', TextType::class)
-            ->add('password', PasswordType::class)
-            ->add('email', EmailType::class)
-            ->add('phone', NumberType::class);
+            ->add('lastName', TextType::class, array('label' => 'Nom de Famille'))
+            ->add('name', TextType::class, array('label' => 'Prénom'))
+            ->add('username', TextType::class, array('label' => 'Nom d\'utilisateur'))
+            ->add('password', PasswordType::class, array('label' => 'Mot de passe'))
+            ->add('email', EmailType::class, array('label' => 'Email'))
+            ->add('phone', NumberType::class, array('label' => 'Numéro de téléphone'));
     }
 
     public function configureOptions(OptionsResolver $resolver)
