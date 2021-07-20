@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\Type\AddUserType;
+use App\Form\AddUserType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManagerInterface;
@@ -17,7 +17,7 @@ class UserController extends AbstractController
     public function listUser(EntityManagerInterface $em): Response
     {
         return $this->render(
-            'listUser.html.twig',
+            'user/listUser.html.twig',
             ['users' => $em->getRepository(User::class)->findBy([], ['name' => 'ASC'])]
         );
     }
@@ -33,11 +33,6 @@ class UserController extends AbstractController
             // Encode the password after retrieving it from the form
             $user->setPassword($password);
             $em = $this->getDoctrine()->getManager();
-            /** 
-             * Set role to the new created account.
-             * Can be improved
-             */
-            $user->setRoles(['ROLE_USER']);
             $em->persist($user);
             $em->flush();
 

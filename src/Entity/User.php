@@ -5,10 +5,13 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\HasLifecycleCallbacks()
  */
@@ -21,22 +24,44 @@ class User implements UserInterface
      */
     private $id;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
     private $lastName;
 
-    /** @ORM\Column(type="string", length=180, unique=true) */
+    /** 
+     * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank
+     */
     private $username;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
     private $name;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 50,
+     *      minMessage = "Your password must be at least {{ limit }} characters long",
+     *      maxMessage = "Your password cannot be longer than {{ limit }} characters"
+     * )
+     */
     private $password;
 
-    /** @ORM\Column(type="string", length=255, unique=true)*/
+    /** 
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email."
+     * )
+     */
     private $email;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** @ORM\Column(type="string", length=10)*/
     private $phone;
 
     /** @ORM\Column(type="json") */

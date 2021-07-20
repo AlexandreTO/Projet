@@ -51,8 +51,8 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
 
             $product = new Products();
             $product->setName($this->fakerGenerator->word);
-            $product->setDescription($this->fakerGenerator->text($maxNbChars = 200));
-            $product->setPrix($this->fakerGenerator->randomDigitNotNull);
+            $product->setDescription($this->fakerGenerator->text());
+            $product->setPrix($this->fakerGenerator->numberBetween(1,500));
             $product->setImage($this->fakerGenerator->imageUrl($width = 640, $height = 480));
             $product->setPromo($this->fakerGenerator->boolean);
             $product->setStatus($this->fakerGenerator->boolean);

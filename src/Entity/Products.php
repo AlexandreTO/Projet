@@ -6,10 +6,13 @@ namespace App\Entity;
 
 use App\Repository\ProductsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProductsRepository::class)
  * @ORM\HasLifecycleCallbacks()
+ * @ApiResource
  */
 
 class Products
@@ -21,13 +24,25 @@ class Products
 	 */
 	private $id;
 
-	/** @ORM\Column(type="string", length=200)*/
+	/** 
+	 * @ORM\Column(type="string", length=200)
+	 * @Assert\NotBlank
+	 * @Assert\Length(
+     *      min = 5,
+     *      max = 50,
+     *      minMessage = "The product name must be at least {{ limit }} characters long",
+     *      maxMessage = "The product name cannot be longer than {{ limit }} characters"
+     * )
+	 */
 	private $name;
 
 	/** @ORM\Column(type="string", length=255)*/
 	private $description;
 
-	/** @ORM\Column(type="float")*/
+	/** 
+	 * @ORM\Column(type="float")
+	 * @Assert\NotBlank
+	 * */
 	private $prix;
 
 	/** @ORM\Column(type="string", length=255)*/
