@@ -2,6 +2,7 @@ name: PHP Composer
 
 on:
   push:
+
   pull_request:
     branches: [master]
 
@@ -28,9 +29,6 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
-
-      - name: Check Symfony Requirements
-        run: vendor/bin/requirements-checker
 
       - name : PHP Unit test
         run: php .vendor/bin/phpunit
