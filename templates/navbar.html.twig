@@ -14,12 +14,18 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ path('list_products') }}">Produits</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/user">Utilisateurs</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
-			</li>
+			
+			{% if is_granted('ROLE_ADMIN') %}
+				<li class="nav-item">
+					<a class="nav-link" href="/user">Utilisateurs</a>
+				</li>
+			{% endif %}
+
+			{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
+				</li>
+			{% endif %}
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			{% if app.user %}
@@ -38,7 +44,6 @@
 					    Inscription
 				    </a>
                 {% endif %}
-
 			</li>
 			<li class="nav-item">
 				{% if app.user %}
