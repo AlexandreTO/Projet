@@ -5,13 +5,17 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * @ApiResource
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\HasLifecycleCallbacks()
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -20,27 +24,53 @@ class User
      */
     private $id;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
     private $lastName;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** 
+     * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank
+     */
+    private $username;
+
+    /** 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     */
     private $name;
 
-    /** @ORM\Column(type="string", length=255)*/
-    private $pwd;
+    /** 
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 50,
+     *      minMessage = "Your password must be at least {{ limit }} characters long",
+     *      maxMessage = "Your password cannot be longer than {{ limit }} characters"
+     * )
+     */
+    private $password;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** 
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email."
+     * )
+     */
     private $email;
 
-    /** @ORM\Column(type="string", length=255)*/
+    /** @ORM\Column(type="string", length=10)*/
     private $phone;
 
-    /** @ORM\Column(type="string", length=255) */
-    private $roles;
+    /** @ORM\Column(type="json") */
+    private $roles = [];
 
     /** @ORM\Column(type="datetime") */
     private $dateCreation;
-    
+
+
     /** @ORM\PrePersist */
     public function onPrePersist(): void
     {
@@ -64,6 +94,19 @@ class User
         return $this;
     }
 
+    /** @see UserInterface */
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
     public function getName(): ?string
     {
         return $this->name;
@@ -76,14 +119,15 @@ class User
         return $this;
     }
 
-    public function getPwd(): ?string
+    /** @see UserInterface */
+    public function getPassword(): ?string
     {
-        return $this->pwd;
+        return $this->password;
     }
 
-    public function setPwd(string $pwd): self
+    public function setPassword(string $password): self
     {
-        $this->pwd = $pwd;
+        $this->password = $password;
 
         return $this;
     }
@@ -112,12 +156,15 @@ class User
         return $this;
     }
 
-    public function getRoles(): ?string
+    public function getRoles(): ?array
     {
-        return $this->roles;
+        $roles = $this->roles;
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
-    public function setRoles(string $roles): self
+    public function setRoles(array $roles): self
     {
         $this->roles = $roles;
 
@@ -134,5 +181,15 @@ class User
         $this->dateCreation = $dateCreation;
 
         return $this;
+    }
+
+    /** @see UserInterface */
+    public function getSalt()
+    {
+    }
+
+    /** @see UserInterface */
+    public function eraseCredentials()
+    {
     }
 }

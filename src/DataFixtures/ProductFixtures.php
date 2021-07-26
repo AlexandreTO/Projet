@@ -29,6 +29,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     private function loadProducts(ObjectManager $manager)
     {
         for ($i = 0; $i <= self::NB_PRODUCTS; $i++) {
+            // Get a random int which will be the id to bind to the product for the fixture
             try {
                 $refNum = random_int(1, CategorieFixtures::NB_CATEGORIES) ?? 0;
             } catch (\Throwable $th) {
@@ -41,7 +42,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 $refNum1 = 1;
             }
 
-            // On fait référaence à la table catégorie
+            // Get Reference from the Categorie table
             /** @var Categories $categorie */
             $categorie = $this->getReference('categorie_' . $refNum);
 
@@ -50,8 +51,8 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
 
             $product = new Products();
             $product->setName($this->fakerGenerator->word);
-            $product->setDescription($this->fakerGenerator->text($maxNbChars = 200));
-            $product->setPrix($this->fakerGenerator->randomDigitNotNull);
+            $product->setDescription($this->fakerGenerator->text());
+            $product->setPrix($this->fakerGenerator->numberBetween(1,500));
             $product->setImage($this->fakerGenerator->imageUrl($width = 640, $height = 480));
             $product->setPromo($this->fakerGenerator->boolean);
             $product->setStatus($this->fakerGenerator->boolean);
