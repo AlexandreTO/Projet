@@ -17,9 +17,11 @@
 			<li class="nav-item">
 				<a class="nav-link" href="/user">Utilisateurs</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
-			</li>
+			{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
+				</li>
+			{% endif %}
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			{% if app.user %}
@@ -38,7 +40,6 @@
 					    Inscription
 				    </a>
                 {% endif %}
-
 			</li>
 			<li class="nav-item">
 				{% if app.user %}
