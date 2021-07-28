@@ -46,4 +46,6 @@
 	{% else %}
 		<p>Surprise, c'est vide !</p>
 	{% endif %}
+
+	{% set filter = app;session.get('cart') %}
 {% endblock %}
