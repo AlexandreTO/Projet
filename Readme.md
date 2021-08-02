@@ -62,5 +62,4 @@ Pour éviter de commit les identifiants et le nom de la base de données dans le
 
 - Utilisation d'un serveur dédié pour la base de données
 - Intégration du webpack pour le React.js
-- Mettre en place une API
 - Affiner les tests pour le CI/CD

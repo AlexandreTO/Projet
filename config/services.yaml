@@ -32,4 +32,4 @@ services:
     Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler:
         arguments:
             - '%env(DATABASE_URL)%'
-            - {db_table: 'cart_session', db_id_col: 'cart_session_id'}
+            - {db_table: 'sessions', db_id_col: 'sess_id'}
