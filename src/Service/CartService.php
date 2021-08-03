@@ -35,6 +35,7 @@ class CartService
     public function getCart(): array
     {
         $cart = $this->session->get('cart', []);
+        $test = $this->session->getName();
 
         $cartWithData = [];
         foreach ($cart as $id => $quantity) {

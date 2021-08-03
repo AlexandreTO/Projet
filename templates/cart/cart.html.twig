@@ -44,6 +44,10 @@
 			</tfoot>
 		</table>
 	{% else %}
-		<p>Surprise, c'est vide !</p>
+		<div class="container">
+			<p>Surprise, c'est vide !</p>
+		</div>
 	{% endif %}
+
+	{% set filter = app.session.get('cart') %}
 {% endblock %}
