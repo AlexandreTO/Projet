@@ -15,7 +15,7 @@ class UserTest extends TestCase
         $name = "TO";
         $prenom = "Alexandre";
         $email = "test@gmail.com";
-        $role = "admin";
+        $role = ['ROLE_USER'];
 
         $user->setLastName($name);
         $user->setName($prenom);
@@ -25,6 +25,6 @@ class UserTest extends TestCase
         $this->assertEquals("TO", $user->getLastName());
         $this->assertEquals("Alexandre", $user->getName());
         $this->assertEquals("test@gmail.com", $user->getEmail());
-        $this->assertEquals('admin', $user->getRoles());
+        $this->assertEquals(['ROLE_USER'], $user->getRoles());
     }
 }

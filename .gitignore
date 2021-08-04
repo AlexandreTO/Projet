@@ -25,3 +25,7 @@
 phpcs.xml.dist
 /.idea *
 /.vscode/
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###

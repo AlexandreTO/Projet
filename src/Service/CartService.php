@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Repository\ProductsRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+// Service to simplify the cart functionnalities (add, remove, getTotalPrice)
 class CartService
 {
     protected $session;
@@ -34,6 +35,7 @@ class CartService
     public function getCart(): array
     {
         $cart = $this->session->get('cart', []);
+        $test = $this->session->getName();
 
         $cartWithData = [];
         foreach ($cart as $id => $quantity) {
@@ -62,7 +64,6 @@ class CartService
     public function getTotalPrice(): float
     {
         $total = 0;
-        //$cartWithData = $this->getCart();
 
         foreach ($this->getCart() as $item) {
             $totalItem = $item['product']->getPrix() * $item['quantity'];

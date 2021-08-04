@@ -2,7 +2,7 @@ name: PHP Composer
 
 on:
   push:
-    branches: [master]
+
   pull_request:
     branches: [master]
 
@@ -30,8 +30,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
-
-      - name: Check Symfony Requirements
-        run: vendor/bin/requirements-checker
+      # - name : PHP Unit test
+      #   run: php .vendor/bin/phpunit
