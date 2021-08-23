@@ -1,0 +1,33 @@
+<div class='container'>
+    {{ form_start(form) }}
+        <h1 class="text-center">Adresse de livraison </h1>
+	    <div class="form-row">
+            <div class='form-group col-md-6'>
+		        {{ form_label(form.deliveryAddress) }}
+                {{ form_widget(
+                   form.deliveryAddress,
+                    {'attr' : {'class': 'form-control', 'placeholder': 'Adresse'}}
+                ) }}
+                {{ form_errors(form) }}
+            </div>
+            <div class="form-group col-md-6">
+		        {{ form_label(form.deliveryCity) }}
+                {{ form_widget(
+                    form.deliveryCity,
+                     {'attr' : {'class': 'form-control', 'placeholder': 'Ville'}}
+                ) }}
+                {{ form_errors(form) }}
+            </div>
+	    </div>
+        <div class="form-group">
+            {{ form_label(form.zipCode) }}
+            {{ form_widget(
+                form.zipCode,
+                {'attr' : {'class': 'form-control', 'placeholder': 'ZipCode'}}
+            ) }}
+            {{ form_errors(form) }}
+        </div>
+               
+        <button type="submit" class="btn btn-primary">Valider commande</button>
+ </div>
+{{ form_end(form) }}

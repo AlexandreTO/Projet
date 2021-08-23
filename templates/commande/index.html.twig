@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande index{% endblock %}
+
+{% block body %}
+    <h1>Commande index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>Status</th>
+                <th>StatusSend</th>
+                <th>DateCreation</th>
+                <th>DateSend</th>
+                <th>DateReception</th>
+                <th>DeliveryAddress</th>
+                <th>DeliveryCity</th>
+                <th>ZipCode</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+      
+        {% for commande in commandes %}
+            {% if commande.user.id == app.user.id %}
+            <tr>
+                <td>{{ commande.id }}</td>
+                <td>{{ commande.user.name }}</td>
+                
+                {% for item in commande.content %}
+                    <td>{{ item.product.name }} {{ item.quantity }}</td>
+
+                {% endfor %}
+               
+                <td>{{ commande.status }}</td>
+                <td>{{ commande.statusSend }}</td>
+                <td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ commande.deliveryAddress }}</td>
+                <td>{{ commande.deliveryCity }}</td>
+                <td>{{ commande.zipCode }}</td>
+                <td>
+                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
+                    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
+                </td>
+            </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('commande_new') }}">Create new</a>
+{% endblock %}

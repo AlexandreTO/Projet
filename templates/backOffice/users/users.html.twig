@@ -2,6 +2,7 @@
 
 {% block body %}
 <h1>Gestion des utilisateurs </h1>
+	<a href="{{path('add_user')}}" class="btn btn-dark">Ajouter un utilisateur</a>
 	<table>
 		<tr>
 			<th>Nom</th>
@@ -15,6 +16,8 @@
 				<td>{{user.name}}</td>
 				<td>{{user.email}}</td>
 				<td>{{user.phone}}</td>
+				<td><a href="{{ path('update_user', {'id': user.id}) }}">Modifier</a></td>
+				<td><a href="{{ path('delete_user', {'id': user.id}) }}">Supprimer</a></td>
 			</tr>
 		{% endfor %}
 	</table>

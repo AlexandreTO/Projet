@@ -1,8 +1,9 @@
-{% extends 'base.html.twig' %} 
+{% extends "backOffice/base.html.twig" %}
+
 {% block body %}
-<div class='container'>
+<h1>{{ form_title }}</h1>
     {{ form_start(form) }}
-        <h1 class="text-center">Inscription </h1>
+        <h1 class="text-center">Ajout d'un utilisateur </h1>
 	    <div class="form-row">
             <div class='form-group col-md-6'>
 		        {{ form_label(form.lastName) }}
@@ -54,7 +55,7 @@
                 ) }}
                 {{ form_errors(form) }}
             </div>
-        <button type="submit" class="btn btn-primary">S'incrire</button>
+        <button type="submit" class="btn btn-primary">Modifier un utilisateur</button>
  </div>
 {{ form_end(form) }}
 {% endblock %}

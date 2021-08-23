@@ -18,6 +18,7 @@
 				</tr>
 			</thead>
 			<tbody>
+
 				{% for item in items %}
 					<tr>
 						<td>{{ item.product.name }}</td>
@@ -43,6 +44,9 @@
 				</tr>
 			</tfoot>
 		</table>
+		<a href="{{path('commande_new')}}" class="btn btn-danger btn-sm">
+								<i class="fas fa-plus"></i>
+							</a>
 	{% else %}
 		<div class="container">
 			<p>Surprise, c'est vide !</p>

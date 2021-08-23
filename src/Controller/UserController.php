@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\BackControllers;
+namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\AddUserType;
@@ -13,16 +13,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractController
 {
-    /** @Route("back/users", name="list_users") */
-    public function listUser(EntityManagerInterface $em): Response
-    {
-        return $this->render(
-            'backOffice/users/listUser.html.twig',
-            ['users' => $em->getRepository(User::class)->findBy([], ['name' => 'ASC'])]
-        );
-    }
-
-    /** @Route("/user/add", name="add_user") */
+    /** @Route("/registry", name="registry") */
     public function addUser(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = new User();
