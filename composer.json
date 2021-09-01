@@ -17,6 +17,7 @@
         "nelmio/cors-bundle": "^2.1",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.6",
+        "stripe/stripe-php": "^7.94",
         "symfony/asset": "5.1.*",
         "symfony/cache": "5.1.*",
         "symfony/console": "5.1.*",

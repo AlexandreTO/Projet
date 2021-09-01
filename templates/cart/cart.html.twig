@@ -2,7 +2,7 @@
 {% block title %}Panier
 {% endblock %}
 {% block body %}
-	<div class="bg-light p-3 text-center" >
+	<div class="bg-light p-3 text-center">
 		<h1>Votre panier</h1>
 	</div>
 
@@ -43,6 +43,12 @@
 				</tr>
 			</tfoot>
 		</table>
+		<div class="col-xs-12 col-sm-6">
+			<form action="" method="POST" class="container">
+				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_51JUpY0JWMc8btZuLKMkvRIo3d6XPiv6dndfKBqALIKrxOidGArjgxcOUawmQZwOA35vTjmW0LCDdGjnteLlDFYOv00dIxapNks" data-amount="{{total * 100}}" data-name="Stuff" data-description="Widget" data-currency="EUR" data-locale="fr"></script>
+			</form>
+		</div>
+
 	{% else %}
 		<div class="container">
 			<p>Surprise, c'est vide !</p>
