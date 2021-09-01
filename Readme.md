@@ -2,11 +2,9 @@
 
 ![PHP 8.0](https://img.shields.io/badge/PHP-8.0-blue)
 ![Symfony](https://img.shields.io/badge/Symfony-5.0-brightgreen)
-<<<<<<< HEAD
 =======
 
 Le projet tourne sous **PHP 8.0**.
->>>>>>> c2ea3f28bab6d6427c4cf2c3e1c06ed1b1cf7f96
 
 ## Objectif
 
