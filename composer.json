@@ -1,4 +1,8 @@
 {
+    "name": "gamecomponent/website",
+    "description": "Electronics company",
+    "type": "project",
+    "license": "proprietary",
     "require": {
         "doctrine/orm": "^2.9.3",
         "symfony/yaml": "^5.3",
