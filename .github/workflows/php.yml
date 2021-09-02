@@ -24,8 +24,7 @@ jobs:
       - name: Setup PHP with tools
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '%{{ matrix.php }}'
-          coverage: none
+          php-version: "${{ matrix.php }}"
 
       - name: Update Symfony version
         if: matrix.symfony-version != ''
