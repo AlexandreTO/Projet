@@ -8,15 +8,31 @@ on:
 
 jobs:
   build:
+    name: Symfony
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - php: 7.3
+          - php: 7.4
+            symfony-version: ^4.4
+          - php: 8.0
 
     steps:
-      - name: Setup PHP with tools
-        uses: shivammathur/setup-php@2.9.0
-        with:
-          tools: phpunit
-
       - uses: actions/checkout@v2
+
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@2.13.0
+        with:
+          php-version: '%{{ matrix.php }}'
+          coverage: none
+
+      - name: Update Symfony version
+        if: matrix.symfony-version != ''
+        run: composer require --no-update "symfony/symfony:${{matrix.symfony-version}}"
+
+      - name: Install Composer dependencies
+        run: composer update ${{matrix.composer-flags}}
 
       - name: Validate composer.json and composer.lock
         run: composer validate
