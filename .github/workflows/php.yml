@@ -28,11 +28,11 @@ jobs:
         if: matrix.symfony-version != ''
         run: composer require --no-update "symfony/symfony:${{matrix.symfony-version}}"
 
-      - name: Install Composer dependencies
-        run: composer install ${{matrix.composer-flags}}
-
       - name: Validate composer.json and composer.lock
         run: composer validate
+
+      - name: Install Composer dependencies
+        run: composer update
 
       - name: Cache Composer packages
         id: composer-cache
