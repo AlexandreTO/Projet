@@ -17,6 +17,9 @@ jobs:
           - php: 8.0
 
     steps:
+      - name: Check php version
+        run: php -v
+
       - uses: actions/checkout@v2
 
       - name: Setup PHP with tools
@@ -42,3 +45,6 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
+
+      - name: Check Symfony requirements
+        run: symfony check:requirements
