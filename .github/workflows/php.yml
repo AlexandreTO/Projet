@@ -43,5 +43,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
-      - name: Check Symfony requirements
-        run: vendor/bin/requirements-checker
+      - name: Check symfony console
+        run: php bin/console about
