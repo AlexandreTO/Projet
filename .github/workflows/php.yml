@@ -14,6 +14,7 @@ jobs:
       matrix:
         include:
           - php: 7.4
+            composer-flags: --prefer-lowest
           - php: 8.0
 
     steps:
@@ -32,7 +33,7 @@ jobs:
         run: composer validate
 
       - name: Install Composer dependencies
-        run: composer update
+        run: composer update ${{matrix.composer-flags}}
 
       - name: Cache Composer packages
         id: composer-cache
