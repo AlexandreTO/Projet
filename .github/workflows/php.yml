@@ -26,7 +26,7 @@ jobs:
 
       - name: Update Symfony version
         if: matrix.symfony-version != ''
-        run: composer require --no-update "symfony/symfony:${{matrix.symfony-version}}"
+        run: composer require --no-update "symfony/symfony"
 
       - name: Validate composer.json and composer.lock
         run: composer validate
@@ -42,6 +42,3 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
-
-      # - name : PHP Unit test
-      #   run: php .vendor/bin/phpunit
