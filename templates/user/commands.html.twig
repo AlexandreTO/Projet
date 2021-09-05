@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %} 
+{% block body %}
+    
+    <div class='container'>
+      <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>Status</th>
+                <th>StatusSend</th>
+                <th>DateCreation</th>
+                <th>DateSend</th>
+                <th>DateReception</th>
+                <th>DeliveryAddress</th>
+                <th>DeliveryCity</th>
+                <th>ZipCode</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+      
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.id }}</td>
+                
+                {% for item in commande.content %}
+                    <td>{{ item.product.name }} {{ item.quantity }}</td>
+
+                {% endfor %}
+               
+                <td>{{ commande.status }}</td>
+                <td>{{ commande.statusSend }}</td>
+                <td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ commande.deliveryAddress }}</td>
+                <td>{{ commande.deliveryCity }}</td>
+                <td>{{ commande.zipCode }}</td>
+                <td>
+                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+{% endblock %}

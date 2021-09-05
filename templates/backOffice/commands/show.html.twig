@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'backOffice/base.html.twig' %}
 
 {% block title %}Commande{% endblock %}
 
@@ -11,13 +11,14 @@
                 <th>Id</th>
                 <td>{{ commande.id }}</td>
             </tr>
+            
             <tr>
                 <th>Content</th>
                 {% for item in commande.content %}
                     <td>{{ item.product.name }} {{ item.quantity }}</td>
+
                 {% endfor %}
             </tr>
-             
             <tr>
                 <th>Status</th>
                 <td>{{ commande.status }}</td>
@@ -53,6 +54,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('user_commands', {'id': app.user.id}) }}">back to list</a>
+    <a href="{{ path('commands_index') }}">back to list</a>
 
-  {% endblock %}
+    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
+
+    {{ include('backOffice/commands/_delete_form.html.twig') }}
+{% endblock %}

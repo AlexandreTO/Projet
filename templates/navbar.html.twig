@@ -14,19 +14,19 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ path('list_products') }}">Produits</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{ path('back_office') }}">Back</a>
-			</li>
-			
-			{% if is_granted('ROLE_ADMIN') %}
-				<li class="nav-item">
-					<a class="nav-link" href="/user">Utilisateurs</a>
-				</li>
-			{% endif %}
 
 			{% if app.user %}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('user_commands', { 'id': app.user.id }) }}">Mes commandes</a>
+				</li>
+			{% endif %}
+
+			{% if is_granted('ROLE_ADMIN') %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('back_office') }}">BackOffice</a>
 				</li>
 			{% endif %}
 		</ul>

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'backOffice/base.html.twig' %}
 
 {% block title %}Commande index{% endblock %}
 
@@ -24,11 +24,8 @@
         <tbody>
       
         {% for commande in commandes %}
-            {% if commande.user.id == app.user.id %}
             <tr>
-                <td>{{ commande.id }}</td>
-                <td>{{ commande.user.name }}</td>
-                
+                <td>{{ commande.id }}</td>                
                 {% for item in commande.content %}
                     <td>{{ item.product.name }} {{ item.quantity }}</td>
 
@@ -43,11 +40,11 @@
                 <td>{{ commande.deliveryCity }}</td>
                 <td>{{ commande.zipCode }}</td>
                 <td>
-                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
+                    <a href="{{ path('admin_show_command', {'id': commande.id}) }}">show</a>
+                    {{ include('backOffice/commands/_delete_form.html.twig') }}
                     <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
                 </td>
             </tr>
-            {% endif %}
         {% else %}
             <tr>
                 <td colspan="11">no records found</td>

@@ -18,8 +18,10 @@
 				<b>Description:
 				</b>
 				{{ product.description }}
-        		<a href="{{ path('update_product', {'id': product.id}) }}">Modifier</a>
-				<a href="{{ path('delete_product', {'id': product.id}) }}">Supprimer</a>
+        		<a href="{{ path('update_product', {'id': product.id}) }}" class="btn btn-primary">Modifier</a>
+				<form method="post" action="{{ path('delete_product', {'id': product.id}) }}" onsubmit="return confirm('Are you sure you want to delete this product?');">
+					<button class="btn btn-danger">Supprimer</button>
+				</form>
 			</div>
 		</div>
 	</div>

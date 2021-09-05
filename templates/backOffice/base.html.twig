@@ -32,25 +32,40 @@
 						<a class="nav-link" href="{{ path('list_users') }}">Utilisateurs</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="{{ path('commands_index') }}">Commandes</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="{{ path('homepage') }}">Front</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Action</a>
-							<a class="dropdown-item" href="#">Another action</a>
-							<a class="dropdown-item" href="#">Something else here</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Separated link</a>
-						</div>
-					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0" data-children-count="1">
-					<input class="form-control mr-sm-2" type="text" placeholder="Search"/>
-					<button class="btn btn-secondary my-2 my-sm-0" type="submit">
-						Search
-					</button>
-				</form>
+				<ul class="nav navbar-nav navbar-right">
+			{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link">
+						Bonjour
+						{{ app.user.username }}
+					</a>
+				</li>
+			{% endif %}
+			<li class="nav-item">
+                {% if app.user %}
+                
+                {% else %}
+                    <a class="nav-link" href="{{ path('registry') }}">
+					    Inscription
+				    </a>
+                {% endif %}
+			</li>
+			<li class="nav-item">
+				{% if app.user %}
+					<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+				{% else %}
+					<a class="nav-link" href="{{ path('app_login') }}">
+						Connexion
+					</a>
+				</li>
+			{% endif %}
+		</ul>
 			</div>
 		</nav>
 		{% block body %}{% endblock %}

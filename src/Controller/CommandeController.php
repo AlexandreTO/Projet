@@ -26,23 +26,6 @@ class CommandeController extends AbstractController
     }
 
     /**
-     * @Route("/", name="commands_index", methods={"GET"})
-     */
-    public function index(CommandeRepository $commandeRepository): Response
-    {
-        $commandes = $commandeRepository->findAll();
-        foreach ($commandes as $commande){
-            $content = fgets($commande->getContent());
-            $unserial = unserialize($content);
-            $commande->setContent($unserial);
-        }
-     
-        return $this->render('commande/index.html.twig', [
-            'commandes' => $commandes,
-        ]);
-    }
-
-    /**
      * @Route("/new", name="commande_new", methods={"GET","POST"})
      */
     public function new(Request $request, CartService $cartService, UserRepository $userRepository): Response
@@ -67,7 +50,7 @@ class CommandeController extends AbstractController
             $entityManager->persist($commande);
             $entityManager->flush();
 
-            return $this->redirectToRoute('commands_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('user_commands', ['id' => $this->token->getToken()->getUser()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('commande/new.html.twig', [
@@ -83,42 +66,12 @@ class CommandeController extends AbstractController
      */
     public function show(Commande $commande): Response
     {
+        $content = fgets($commande->getContent());
+        $unserial = unserialize($content);
+        $commande->setContent($unserial);
+        
         return $this->render('commande/show.html.twig', [
             'commande' => $commande,
         ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="commande_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Commande $commande): Response
-    {
-        $form = $this->createForm(CommandeType::class, $commande);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('commande_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->render('commande/edit.html.twig', [
-            'commande' => $commande,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/{id}", name="commande_delete", methods={"POST"})
-     */
-    public function delete(Request $request, Commande $commande): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$commande->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($commande);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('commande_index', [], Response::HTTP_SEE_OTHER);
     }
 }
