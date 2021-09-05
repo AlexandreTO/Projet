@@ -2,11 +2,8 @@
 
 ![PHP 8.0](https://img.shields.io/badge/PHP-8.0-blue)
 ![Symfony](https://img.shields.io/badge/Symfony-5.0-brightgreen)
-<<<<<<< HEAD
-=======
 
 Le projet tourne sous **PHP 8.0**.
->>>>>>> c2ea3f28bab6d6427c4cf2c3e1c06ed1b1cf7f96
 
 ## Objectif
 
@@ -64,9 +61,5 @@ Pour éviter de commit les identifiants et le nom de la base de données dans le
 #### TODO
 
 - Utilisation d'un serveur dédié pour la base de données
-<<<<<<< HEAD
-- Crypter les mots de passes
-=======
 - Intégration du webpack pour le React.js
 - Affiner les tests pour le CI/CD
->>>>>>> c2ea3f28bab6d6427c4cf2c3e1c06ed1b1cf7f96
