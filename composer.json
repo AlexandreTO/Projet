@@ -30,7 +30,8 @@
         "symfony/mailer": "^5.3",
         "symfony/notifier": "^5.3",
         "symfony/validator": "^5.3",
-        "symfony/asset": "^5.3"
+        "symfony/asset": "^5.3",
+        "symfony/form": "^5.3"
     },
     "autoload": {
         "psr-4": {
