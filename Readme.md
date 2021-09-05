@@ -2,6 +2,7 @@
 
 ![PHP 8.0](https://img.shields.io/badge/PHP-8.0-blue)
 ![Symfony](https://img.shields.io/badge/Symfony-5.0-brightgreen)
+=======
 
 Le projet tourne sous **PHP 8.0**.
 
@@ -24,9 +25,10 @@ La deadline est **le 17 septembre 2021**
 
 Pour pouvoir utiliser les commandes, il faudra installer Composer <https://getcomposer.org/download/> et installer Symfony via <https://symfony.com/download>
 
-Pour lancer Symfony, mettez-vous dans le dossier du repo, ouvrez un terminal depuis ce dossier et lancez la commande :
+Pour lancer Symfony, mettez-vous dans le dossier du repo, ouvrez un terminal depuis ce dossier et lancez les commandes :
 
 ```bash
+composer update php --with-all-dependencies
 symfony server:start
 ```
 
