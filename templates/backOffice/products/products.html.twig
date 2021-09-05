@@ -1,0 +1,27 @@
+{% extends "backOffice/base.html.twig" %}
+{% block title %}Game Component | Produits
+{% endblock %}
+{% block body %}
+	<div class="container">
+		<h1 class="mt-3 mb-4">Gestion des produits</h1>
+		<a href="{{path('add_product')}}" class="btn btn-dark">Ajouter un produit</a>
+		<div class="row">
+			{% for product in products %}
+				<div class="col-md-4">
+					<div class="card mb-4">
+						<img src="https://via.placeholder.com/200x150" alt="{{ product.name }}" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">{{ product.name }}</h5>
+							<p class="card-text">{{ product.description }}</p>
+							<div class="d-flex justify-content-between align-item-center">
+								<a href="{{path('back_view_product', {id: product.id})}}" class="btn btn-dark">View details</a>
+								<span class="h5 mt-auto">{{ product.prix }}
+									€</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.css"/>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous"/>
+		{% endblock %}
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Game Component</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarColor02">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('back_list_products') }}">Produits</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('list_users') }}">Utilisateurs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('commands_index') }}">Commandes</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ path('homepage') }}">Front</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+			{% if app.user %}
+				<li class="nav-item">
+					<a class="nav-link">
+						Bonjour
+						{{ app.user.username }}
+					</a>
+				</li>
+			{% endif %}
+			<li class="nav-item">
+                {% if app.user %}
+			
+                
+                {% else %}
+                    <a class="nav-link" href="{{ path('registry') }}">
+					    Inscription
+				    </a>
+                {% endif %}
+			</li>
+			<li class="nav-item">
+			
+				{% if app.user %}
+					<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+				{% else %}
+					<a class="nav-link" href="{{ path('app_login') }}">
+						Connexion
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+			</div>
+		</nav>
+		{% block body %}{% endblock %}
+		{% block javascripts %}{% endblock %}
+	</body>
+</html>

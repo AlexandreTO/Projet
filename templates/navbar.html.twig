@@ -3,7 +3,6 @@
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-
 	<div class="collapse navbar-collapse" id="navbarColor02">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
@@ -14,16 +13,19 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ path('list_products') }}">Produits</a>
 			</li>
-			
-			{% if is_granted('ROLE_ADMIN') %}
-				<li class="nav-item">
-					<a class="nav-link" href="/user">Utilisateurs</a>
-				</li>
-			{% endif %}
 
 			{% if app.user %}
 				<li class="nav-item">
 					<a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('user_commands', { 'id': app.user.id }) }}">Mes commandes</a>
+				</li>
+			{% endif %}
+
+			{% if is_granted('ROLE_ADMIN') %}
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('back_office') }}">BackOffice</a>
 				</li>
 			{% endif %}
 		</ul>
@@ -32,7 +34,7 @@
 				<li class="nav-item">
 					<a class="nav-link">
 						Bonjour
-						{{ app.user.username }}
+						{{ app.user.username }} 
 					</a>
 				</li>
 			{% endif %}
@@ -40,7 +42,7 @@
                 {% if app.user %}
                 
                 {% else %}
-                    <a class="nav-link" href="{{ path('add_user') }}">
+                    <a class="nav-link" href="{{ path('registry') }}">
 					    Inscription
 				    </a>
                 {% endif %}

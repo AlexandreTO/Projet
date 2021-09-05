@@ -1,0 +1,62 @@
+{% extends 'backOffice/base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+    <h1>Commande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commande.id }}</td>
+            </tr>
+            
+            <tr>
+                <th>Content</th>
+                {% for item in commande.content %}
+                    <td>{{ item.product.name }} {{ item.quantity }}</td>
+
+                {% endfor %}
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ commande.status }}</td>
+            </tr>
+            <tr>
+                <th>StatusSend</th>
+                <td>{{ commande.statusSend }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateSend</th>
+                <td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateReception</th>
+                <td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DeliveryAddress</th>
+                <td>{{ commande.deliveryAddress }}</td>
+            </tr>
+            <tr>
+                <th>DeliveryCity</th>
+                <td>{{ commande.deliveryCity }}</td>
+            </tr>
+            <tr>
+                <th>ZipCode</th>
+                <td>{{ commande.zipCode }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('commands_index') }}">back to list</a>
+
+    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
+
+    {{ include('backOffice/commands/_delete_form.html.twig') }}
+{% endblock %}
