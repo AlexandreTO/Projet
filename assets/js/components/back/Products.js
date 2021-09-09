@@ -39,19 +39,21 @@ class Products extends Component {
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div>
-                        <h1 className="mt-3 mb-4">Produits</h1>
+                    <div className="container">
+                        <h1 className="mt-3 mb-4">Gestion des produits</h1>
+                        <a href={`http://localhost:8000/back/add-product`} className="btn btn-dark">Ajouter un produit</a>
                         <div className="row">
                             {products.map(product =>
-                                <div className="col-md-4">
+                                <div className="col-md-4" key={product.id}>
                                     <div className="card mb-4">
-                                        <img src="https://via.placeholder.com/200x150" alt={product.name } className="card-img-top"/>
+                                        <img src="https://via.placeholder.com/200x150" alt="{{ product.name }}" className="card-img-top"/>
                                         <div className="card-body">
                                             <h5 className="card-title">{product.name}</h5>
                                             <p className="card-text">{product.description}</p>
                                             <div className="d-flex justify-content-between align-item-center">
-                                                <a href={`http://localhost:8000/products/${product.id}`} className="btn btn-dark">View details</a>
-                                                <span className="h5 mt-auto">{product.prix}€</span>
+                                                <a href={`http://localhost:8000/back/products/${product.id}`} className="btn btn-dark">View details</a>
+                                                <span className="h5 mt-auto">{product.prix}
+                                                    €</span>
                                             </div>
                                         </div>
                                     </div>
@@ -65,6 +67,6 @@ class Products extends Component {
     }
 }
 
-ReactDOM.render(<Products/>,document.getElementById('products'))
+ReactDOM.render(<Products/>,document.getElementById('back_products'))
 
 export default Products;

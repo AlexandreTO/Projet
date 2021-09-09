@@ -2,27 +2,6 @@
 
 {% block body %}
 <h1>Gestion des utilisateurs </h1>
-	<a href="{{path('add_user')}}" class="btn btn-dark">Ajouter un utilisateur</a>
-	<table>
-		<tr>
-			<th>Nom</th>
-			<th>Prénom</th>
-			<th>Email</th>
-			<th>Téléphone</th>
-		</tr>
-		{% for user in users %}
-			<tr>
-				<td>{{user.lastName}}</td>
-				<td>{{user.name}}</td>
-				<td>{{user.email}}</td>
-				<td>{{user.phone}}</td>
-				<td><a href="{{ path('update_user', {'id': user.id}) }}" class=" btn btn-primary">Modifier</a></td>
-				<td>
-					<form method="post" action="{{ path('delete_user', {'id': user.id}) }}" onsubmit="return confirm('Are you sure you want to delete this user?');">
-						<button class="btn btn-danger">Supprimer</button>
-					</form>
-				</td>
-			</tr>
-		{% endfor %}
-	</table>
+	<div id="back_users"></div>
+	{{ encore_entry_script_tags('back_users') }}
 {% endblock %}

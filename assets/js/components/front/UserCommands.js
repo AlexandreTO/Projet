@@ -21,8 +21,6 @@ class UserCommands extends Component {
                 'Accept': 'application/json'
             }
         }).then( response => {
-            console.log('api commande');
-            console.log(response.data);
             this.setState({
                 commands: response.data,
                 loading: false

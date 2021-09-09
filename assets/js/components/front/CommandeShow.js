@@ -24,7 +24,6 @@ class CommandeShow extends Component {
     }
 
     componentDidMount() {
-        console.log('fuck');
         this.getCommande(window.location.pathname);
     }
 
@@ -37,7 +36,6 @@ class CommandeShow extends Component {
                 'Accept': 'application/json'
             }
         }).then( response => {
-            console.log(response.data);
             this.setState({
                 commande: response.data,
                 loading: false
@@ -47,7 +45,6 @@ class CommandeShow extends Component {
 
     render() {
         var {commande} = this.state;
-        console.log(commande);
         return (
             <table className="table">
                 <tbody>
