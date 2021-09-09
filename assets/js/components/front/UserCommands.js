@@ -15,7 +15,7 @@ class UserCommands extends Component {
         this.getCommands(window.location.pathname);
     }
     getCommand(path){
-        axios.get(`http://localhost:8000${path}`, {
+        axios.get(window.location.origin + `${path}`, {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
@@ -30,7 +30,7 @@ class UserCommands extends Component {
     
     getCommands(path) {
         var path = path.split('/');
-        axios.get(`http://localhost:8000/api/${path[1]}s/${path[2]}`, {
+        axios.get(window.location.origin + `/api/${path[1]}s/${path[2]}`, {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
@@ -49,7 +49,7 @@ class UserCommands extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'row text-center'}>
+                    <div className={'container row text-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
@@ -87,7 +87,7 @@ class UserCommands extends Component {
                                 <td>{ command.deliveryCity }</td>
                                 <td>{ command.zipCode }</td>
                                 <td>
-                                    <a href={`http://localhost:8000/commands/${command.id}`}>show</a>
+                                    <a href={window.location.origin + `/commands/${command.id}`}>show</a>
                                 </td>
                             </tr>
                         )}

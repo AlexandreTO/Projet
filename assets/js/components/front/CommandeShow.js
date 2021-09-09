@@ -30,7 +30,7 @@ class CommandeShow extends Component {
     getCommande(path) {
         var path = path.split('/');
         path[1] = path[1].slice(0, -1);
-        axios.get(`http://localhost:8000/api/${path[1]}es/${path[2]}`, {
+        axios.get(window.location.origin + `/api/${path[1]}es/${path[2]}`, {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'

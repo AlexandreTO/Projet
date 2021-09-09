@@ -35,7 +35,7 @@ class Products extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'row text-center'}>
+                    <div className={'container row text-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
@@ -50,7 +50,7 @@ class Products extends Component {
                                             <h5 className="card-title">{product.name}</h5>
                                             <p className="card-text">{product.description}</p>
                                             <div className="d-flex justify-content-between align-item-center">
-                                                <a href={`http://localhost:8000/products/${product.id}`} className="btn btn-dark">View details</a>
+                                                <a href={window.location.origin + `/products/${product.id}`} className="btn btn-dark">View details</a>
                                                 <span className="h5 mt-auto">{product.prix}€</span>
                                             </div>
                                         </div>

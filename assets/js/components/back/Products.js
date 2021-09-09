@@ -17,7 +17,7 @@ class Products extends Component {
     }
 
     getProducts() {
-        axios.get('http://localhost:8000/api/products', {
+        axios.get(window.location.origin +'/api/products', {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
@@ -35,13 +35,13 @@ class Products extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'row text-center'}>
+                    <div className={'container row text-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
                     <div className="container">
                         <h1 className="mt-3 mb-4">Gestion des produits</h1>
-                        <a href={`http://localhost:8000/back/add-product`} className="btn btn-dark">Ajouter un produit</a>
+                        <a href={window.location.origin + `/back/add-product`} className="btn btn-dark">Ajouter un produit</a>
                         <div className="row">
                             {products.map(product =>
                                 <div className="col-md-4" key={product.id}>
@@ -51,7 +51,7 @@ class Products extends Component {
                                             <h5 className="card-title">{product.name}</h5>
                                             <p className="card-text">{product.description}</p>
                                             <div className="d-flex justify-content-between align-item-center">
-                                                <a href={`http://localhost:8000/back/products/${product.id}`} className="btn btn-dark">View details</a>
+                                                <a href={window.location.origin + `/back/products/${product.id}`} className="btn btn-dark">View details</a>
                                                 <span className="h5 mt-auto">{product.prix}
                                                     €</span>
                                             </div>

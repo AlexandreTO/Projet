@@ -33,7 +33,7 @@ class ProductsView extends Component {
 
     getProduct(path) {
         var path = path.split('/');
-        axios.get(`http://localhost:8000/api/${path[2]}/${path[3]}`, {
+        axios.get(window.location.origin + `/api/${path[2]}/${path[3]}`, {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
@@ -51,7 +51,7 @@ class ProductsView extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'row text-center'}>
+                    <div className={'container row text-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
@@ -66,8 +66,8 @@ class ProductsView extends Component {
                                 <hr/>
                                 <b>Description:</b>
                                 {product.description}
-                                <a href={`http://localhost:8000/back/update-product/${product.id}`} className="btn btn-primary">Modifier</a>
-                                <form method="post" action={`http://localhost:8000/back/delete-product/${product.id}`} onClick={() => window.confirm('Are you sure you want to delete this product?')}>
+                                <a href={window.location.origin + `/back/update-product/${product.id}`} className="btn btn-primary">Modifier</a>
+                                <form method="post" action={window.location.origin + `/back/delete-product/${product.id}`} onClick={() => window.confirm('Are you sure you want to delete this product?')}>
                                     <button className="btn btn-danger">Supprimer</button>
                                 </form>
                             </div>

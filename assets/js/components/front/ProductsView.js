@@ -30,7 +30,7 @@ class ProductsView extends Component {
     }
 
     getProduct(path) {
-        axios.get(`http://localhost:8000/api${path}`, {
+        axios.get(window.location.origin + `/api${path}`, {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
@@ -48,7 +48,7 @@ class ProductsView extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'row text-center'}>
+                    <div className={'container row text-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
@@ -64,7 +64,7 @@ class ProductsView extends Component {
                                 <b>Description:</b>
                                 {product.description}
                                 <form className="mt-4 p-4 bg-light" method="post">
-                                    <a className="btn btn-info" href={`http://localhost:8000/cart/add/${product.id}`}>Add to Cart</a>
+                                    <a className="btn btn-info" href={window.location.origin + `/cart/add/${product.id}`}>Add to Cart</a>
                                 </form>
                             </div>
                         </div>

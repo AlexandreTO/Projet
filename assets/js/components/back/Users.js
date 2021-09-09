@@ -17,7 +17,7 @@ class Users extends Component {
     }
     
     getUsers() {
-        axios.get(`http://localhost:8000/api/users`, {
+        axios.get(window.location.origin + `/api/users`, {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
@@ -32,7 +32,7 @@ class Users extends Component {
 
     handleOnClick(id) {
         if(confirm("Are you sure you want to delete this user?")){
-            axios.delete(`http://localhost:8000/back/delete-user/${id}`);
+            axios.delete(window.location.origin + `/back/delete-user/${id}`);
         }
     }
 
@@ -42,12 +42,12 @@ class Users extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'row text-center'}>
+                    <div className={'container row text-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
                     <div>
-                        <a href={`http://localhost:8000/back/users/add`} className="btn btn-dark">Ajouter un utilisateur</a>
+                        <a href={window.location.origin + `/back/users/add`} className="btn btn-dark">Ajouter un utilisateur</a>
                         <table>
                             <thead>
                                 <tr>
@@ -64,7 +64,7 @@ class Users extends Component {
                                         <td>{user.name}</td>
                                         <td>{user.email}</td>
                                         <td>{user.phone}</td>
-                                        <td><a href={`http://localhost:8000/back/update-user/${user.id}`} className=" btn btn-primary">Modifier</a></td>
+                                        <td><a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">Modifier</a></td>
                                         <td>
                                             <button className="btn btn-danger" onClick={this.handleOnClick(user.id)}>Supprimer</button>
                                         </td>
