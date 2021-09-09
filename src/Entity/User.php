@@ -69,7 +69,13 @@ class User implements UserInterface
      */
     private $email;
 
-    /** @ORM\Column(type="string", length=20)*/
+    /** @ORM\Column(type="string", length=20)
+     *  @Assert\Length(
+     *      min = 10,
+     *      max = 10,
+     *      minMessage = "Your phone number must be at least {{ limit }} numbers long",
+     * )
+     */
     private $phone;
 
     /** @ORM\Column(type="json") */
