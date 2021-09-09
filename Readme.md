@@ -4,7 +4,9 @@
 ![Symfony](https://img.shields.io/badge/Symfony-5.0-brightgreen)
 =======
 
-Le projet tourne sous **PHP 8.0**.
+Le projet tourne sous **PHP 8.0**. Si possible mettez à jour votre version de PHP. 
+
+(Linux et Mac ont normalement cette mise à jour de disponible.)
 
 ## Objectif
 
@@ -25,24 +27,17 @@ La deadline est **le 17 septembre 2021**
 
 Pour pouvoir utiliser les commandes, il faudra installer Composer <https://getcomposer.org/download/> et installer Symfony via <https://symfony.com/download>
 
-Pour lancer Symfony, mettez-vous dans le dossier du repo, ouvrez un terminal depuis ce dossier et lancez les commandes :
+Pour lancer Symfony, mettez-vous dans le dossier du repo, ouvrez un terminal depuis ce dossier et lancez les commandes (**la commande update ne doit être lancée que si seulement il y a eu des changements dans le `composer.json`**) :
 
 ```bash
 composer update php --with-all-dependencies
 symfony server:start
 ```
 
-Pour utiliser les fixtures, il faut l'installer via une commande et pour lancer les fixtures:
+Pour utiliser les fixtures, il faut lancer cette commande:
 
 ```bash
-composer require --dev orm-fixtures
 php bin/console doctrine:fixtures:load
-```
-
-Ensuite pour installer Faker, on entre cette commande :
-
-```bash
-composer require fakerphp/faker
 ```
 
 A chaque fois qu'il y a des modifications à faire sur la base de données, il faudra génerer la migration avec la commande : 
@@ -56,12 +51,13 @@ Et l'intégrer dans la base de données avec :
 php bin/console doctrine:migrations:execute 'DoctrineMigrations\VersionDeLaMigration'
 ```
 
-Pour éviter de commit les identifiants et le nom de la base de données dans le fichier .env, il faut créer un nouveau fichier qui s'appellera **.env.local** qui contient le même contenu que .env. Il faudra ensuite remplacé les identifiants, mots de passe et le nom de la base de données dans **.env.local** et non dans .env. Cela permet de protéger notre base de données.
+Pour éviter de commit les identifiants et le nom de la base de données dans le fichier .env, il faut créer un nouveau fichier qui s'appellera `.env.local` qui contient le même contenu que .env. Il faudra ensuite remplacé les identifiants, mots de passe et le nom de la base de données dans `.env.local` et non dans .env. Cela permet de protéger notre base de données.
 
 > En attendant un serveur dédié pour avoir une base de données commune au groupe, on utilisera nos base des données **en locale**.
 
 #### TODO
 
 - Utilisation d'un serveur dédié pour la base de données
+- Finir l'implémentation de Stripe pour le système de paiement
 - Intégration du webpack pour le React.js
 - Affiner les tests pour le CI/CD
