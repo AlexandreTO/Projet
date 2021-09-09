@@ -40,7 +40,7 @@ Pour utiliser les fixtures, il faut lancer cette commande:
 php bin/console doctrine:fixtures:load
 ```
 
-A chaque fois qu'il y a des modifications à faire sur la base de données, il faudra génerer la migration avec la commande : 
+A chaque fois qu'il y a des modifications à faire sur la base de données (c'est-à-dire une modification dans les entités), il faudra génerer la migration avec la commande : 
 
 ```bash
 php bin/console doctrine:migrations:diff
@@ -54,6 +54,12 @@ php bin/console doctrine:migrations:execute 'DoctrineMigrations\VersionDeLaMigra
 Pour éviter de commit les identifiants et le nom de la base de données dans le fichier .env, il faut créer un nouveau fichier qui s'appellera `.env.local` qui contient le même contenu que .env. Il faudra ensuite remplacé les identifiants, mots de passe et le nom de la base de données dans `.env.local` et non dans .env. Cela permet de protéger notre base de données.
 
 > En attendant un serveur dédié pour avoir une base de données commune au groupe, on utilisera nos base des données **en locale**.
+
+Pour le `.env.local`, copiez cette ligne et remplacer `db_user`, `db_password` et `nom_bdd` par les informations de votre base de données.
+
+`
+DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/nom_bdd?serverVersion=5.7
+`
 
 #### TODO
 
