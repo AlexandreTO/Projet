@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\AddUserType;
+use App\Repository\CommandeRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManagerInterface;
@@ -13,16 +14,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractController
 {
-    /** @Route("/user", name="list_user") */
-    public function listUser(EntityManagerInterface $em): Response
-    {
-        return $this->render(
-            'user/listUser.html.twig',
-            ['users' => $em->getRepository(User::class)->findBy([], ['name' => 'ASC'])]
-        );
-    }
-
-    /** @Route("/user/add", name="add_user") */
+    /** @Route("/registry", name="registry") */
     public function addUser(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         $user = new User();
@@ -33,6 +25,9 @@ class UserController extends AbstractController
             // Encode the password after retrieving it from the form
             $user->setPassword($password);
             $em = $this->getDoctrine()->getManager();
+            // add role Admin for tests
+            $roles = ["ROLE_ADMIN"];
+            $user->setRoles($roles);
             $em->persist($user);
             $em->flush();
 
@@ -41,6 +36,23 @@ class UserController extends AbstractController
 
         return $this->render('user/addUser.html.twig', [
             'form' => $form->createView(),
+        ]);
+    }
+
+    /** @Route("/user/{id}/commands", name="user_commands") */
+    public function userCommands(int $id, CommandeRepository $commandeRepository): Response
+    {
+        $commandes = $commandeRepository->findBy(
+            ['user' => $id]
+        );
+        foreach ($commandes as $commande){
+            $content = fgets($commande->getContent());
+            $unserial = unserialize($content);
+            $commande->setContent($unserial);
+        }
+
+        return $this->render('user/commands.html.twig', [
+            'commandes' => $commandes,
         ]);
     }
 }
