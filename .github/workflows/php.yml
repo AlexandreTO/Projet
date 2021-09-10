@@ -8,18 +8,32 @@ on:
 
 jobs:
   build:
+    name: Symfony
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - php: 7.4
+            composer-flags: --prefer-lowest
+          - php: 8.0
 
     steps:
-      - name: Setup PHP with tools
-        uses: shivammathur/setup-php@2.9.0
-        with:
-          tools: phpunit
-
       - uses: actions/checkout@v2
+
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php }}"
+
+      - name: Update Symfony version
+        if: matrix.symfony-version != ''
+        run: composer require --no-update "symfony/symfony"
 
       - name: Validate composer.json and composer.lock
         run: composer validate
+
+      - name: Install Composer dependencies
+        run: composer update ${{matrix.composer-flags}}
 
       - name: Cache Composer packages
         id: composer-cache
@@ -29,6 +43,3 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
-
-      # - name : PHP Unit test
-      #   run: php .vendor/bin/phpunit
