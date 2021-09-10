@@ -39,7 +39,7 @@ class Products extends Component {
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div>
+                    <div className="container">
                         <h1 className="mt-3 mb-4">Produits</h1>
                         <div className="row">
                             {products.map(product =>
