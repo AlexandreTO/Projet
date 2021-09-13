@@ -41,8 +41,13 @@ class BackProductsController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
 			$entityManager = $this->getDoctrine()->getManager();
+            // set promo a none car non nullable
+            $product->setPromo('none');
 			$entityManager->persist($product);
 			$entityManager->flush();
+            return $this->redirectToRoute('back_list_products');
+
+
         }
         return $this->render("backOffice/products/addProducts.html.twig", [
             "form_title" => "Ajouter un produit",

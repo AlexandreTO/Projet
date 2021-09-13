@@ -67,6 +67,35 @@ class BackUserController extends AbstractController
             "form" => $form->createView(),
         ]);
     }
+
+    /**
+    * @Route("/back/up-to-admin/{id}", name="up_to_admin")
+    */
+    public function upToAdmin (Request $request, int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $entityManager->getRepository(User::class)->find($id);
+        $roles = ["ROLE_ADMIN"];
+        $user->setRoles($roles);    
+        $entityManager->flush();
+
+        return $this->redirectToRoute("list_users");
+    }
+
+    /**
+    * @Route("/back/pass-to-user/{id}", name="pass_to_user")
+    */
+    public function passToUser (Request $request, int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $entityManager->getRepository(User::class)->find($id);
+        $roles = ["ROLE_USER"];
+        $user->setRoles($roles);    
+        $entityManager->flush();
+
+        return $this->redirectToRoute("list_users");
+    }
+
     /**
      * @Route("/back/delete-user/{id}", name="delete_user")
      */
