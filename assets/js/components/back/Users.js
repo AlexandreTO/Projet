@@ -48,14 +48,16 @@ class Users extends Component {
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div>
+                    <div className="container">
+                        <h1>Gestion des utilisateurs </h1>
                         <a href={window.location.origin + `/back/users/add`} className="btn btn-dark">Ajouter un utilisateur</a>
-                        <table>
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th>Nom</th>
                                     <th>Prénom</th>
                                     <th>Email</th>
+                                    <th>Rôle</th>
                                     <th>Téléphone</th>
                                 </tr>
                             </thead>

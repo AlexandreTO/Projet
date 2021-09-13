@@ -42,7 +42,7 @@ class Products extends Component {
                     <div className="container">
                         <h1 className="mt-3 mb-4">Gestion des produits</h1>
                         <a href={window.location.origin + `/back/add-product`} className="btn btn-dark">Ajouter un produit</a>
-                        <div className="row">
+                        <div className="row mt-2">
                             {products.map(product =>
                                 <div className="col-md-4" key={product.id}>
                                     <div className="card mb-4">
