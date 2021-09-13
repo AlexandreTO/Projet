@@ -48,9 +48,8 @@ class UserController extends AbstractController
         foreach ($commandes as $commande){
             $content = fgets($commande->getContent());
             $unserial = unserialize($content);
-            $commande->setContent($unserial);
+            $commande   ->setContent($unserial);
         }
-
         return $this->render('user/commands.html.twig', [
             'commandes' => $commandes,
         ]);
