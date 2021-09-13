@@ -45,6 +45,9 @@ class BackProductsController extends AbstractController
             $product->setPromo('none');
 			$entityManager->persist($product);
 			$entityManager->flush();
+            return $this->redirectToRoute('back_list_products');
+
+
         }
         return $this->render("backOffice/products/addProducts.html.twig", [
             "form_title" => "Ajouter un produit",
