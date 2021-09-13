@@ -41,6 +41,8 @@ class BackProductsController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
 			$entityManager = $this->getDoctrine()->getManager();
+            // set promo a none car non nullable
+            $product->setPromo('none');
 			$entityManager->persist($product);
 			$entityManager->flush();
         }

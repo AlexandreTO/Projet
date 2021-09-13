@@ -2,46 +2,46 @@
   "entrypoints": {
     "products": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_axios_index_js-node_modules_core-js_modules_es_object_create_js-node_mod-729503.js",
-        "/build/products.js"
+        "/build/runtime.48992d8b.js",
+        "/build/625.42cef3fe.js",
+        "/build/products.e04614f4.js"
       ]
     },
     "product_view": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_axios_index_js-node_modules_core-js_modules_es_object_create_js-node_mod-729503.js",
-        "/build/product_view.js"
+        "/build/runtime.48992d8b.js",
+        "/build/625.42cef3fe.js",
+        "/build/product_view.e3a0b84f.js"
       ]
     },
     "commande_show": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_axios_index_js-node_modules_core-js_modules_es_object_create_js-node_mod-729503.js",
-        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_strin-af505a.js",
-        "/build/commande_show.js"
+        "/build/runtime.48992d8b.js",
+        "/build/625.42cef3fe.js",
+        "/build/900.d8144eaa.js",
+        "/build/commande_show.e7b3ab55.js"
       ]
     },
     "back_product_view": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_axios_index_js-node_modules_core-js_modules_es_object_create_js-node_mod-729503.js",
-        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_strin-af505a.js",
-        "/build/back_product_view.js"
+        "/build/runtime.48992d8b.js",
+        "/build/625.42cef3fe.js",
+        "/build/900.d8144eaa.js",
+        "/build/back_product_view.8eb179fc.js"
       ]
     },
     "back_products": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_axios_index_js-node_modules_core-js_modules_es_object_create_js-node_mod-729503.js",
-        "/build/back_products.js"
+        "/build/runtime.48992d8b.js",
+        "/build/625.42cef3fe.js",
+        "/build/back_products.7c7cf9a2.js"
       ]
     },
     "back_users": {
       "js": [
-        "/build/runtime.js",
-        "/build/vendors-node_modules_axios_index_js-node_modules_core-js_modules_es_object_create_js-node_mod-729503.js",
-        "/build/back_users.js"
+        "/build/runtime.48992d8b.js",
+        "/build/625.42cef3fe.js",
+        "/build/back_users.2b64eb3f.js"
       ]
     }
   }

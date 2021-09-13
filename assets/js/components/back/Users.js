@@ -30,8 +30,10 @@ class Users extends Component {
         })
     }
 
-    handleOnClick(id) {
-        if(confirm("Are you sure you want to delete this user?")){
+    handleOnClick(e, id) {
+        e.preventDefault();
+        var confirm = window.confirm("Are you sure you want to delete this user?")
+        if (confirm){
             axios.delete(window.location.origin + `/back/delete-user/${id}`);
         }
     }
@@ -63,10 +65,19 @@ class Users extends Component {
                                         <td>{user.lastName}</td>
                                         <td>{user.name}</td>
                                         <td>{user.email}</td>
+                                        <td>{user.roles}</td>
                                         <td>{user.phone}</td>
                                         <td><a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">Modifier</a></td>
+                                        <td>  
+                                            {user.roles == 'ROLE_USER' &&
+                                                 <a href={window.location.origin + `/back/up-to-admin/${user.id}`} className=" btn btn-primary">Passer en admin</a>
+                                            }
+                                            {user.roles != 'ROLE_USER' &&
+                                                 <a href={window.location.origin + `/back/pass-to-user/${user.id}`} className=" btn btn-primary">Passer en user</a>
+                                            }
+                                        </td>
                                         <td>
-                                            <button className="btn btn-danger" onClick={this.handleOnClick(user.id)}>Supprimer</button>
+                                            <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}>Supprimer</a>
                                         </td>
                                     </tr>
                                 )}
