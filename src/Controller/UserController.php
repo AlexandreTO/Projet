@@ -31,6 +31,8 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
 
+            $this->addFlash('success', "Account created");
+
             return $this->redirectToRoute("app_login");
         }
 
