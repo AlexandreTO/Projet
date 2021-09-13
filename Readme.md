@@ -60,6 +60,14 @@ Pour le `.env.local`, copiez cette ligne et remplacer `db_user`, `db_password` e
 `
 DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/nom_bdd?serverVersion=5.7
 `
+### React
+
+Pour pouvoir utiliser React, il faut déja avoir `npm` et `node` d'installer sur le pc. Ensuite lancez ces commandes : 
+
+```bash
+npm update
+npm run build
+```
 
 #### TODO
 
