@@ -73,5 +73,4 @@ npm run build
 
 - Utilisation d'un serveur dédié pour la base de données
 - Finir l'implémentation de Stripe pour le système de paiement
-- Intégration du webpack pour le React.js
 - Affiner les tests pour le CI/CD
