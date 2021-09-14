@@ -58,26 +58,25 @@ class BackProductsController extends AbstractController
 	/**
  	* @Route("/back/update-product/{id}", name="update_product")
 	*/
-
 	public function updateProduct(Request $request, int $id): Response
-{
-    $entityManager = $this->getDoctrine()->getManager();
-
-    $product = $entityManager->getRepository(Products::class)->find($id);
-    $form = $this->createForm(ProductFormType::class, $product);
-    $form->handleRequest($request);
-
-    if($form->isSubmitted() && $form->isValid())
     {
-        $entityManager->flush();
-		return $this->redirectToRoute('back_list_products');
-    }
+        $entityManager = $this->getDoctrine()->getManager();
 
-    return $this->render("backOffice/products/updateProduct.html.twig", [
-        "form_title" => "Modifier un produit",
-        "form_product" => $form->createView(),
-    ]);
-}
+        $product = $entityManager->getRepository(Products::class)->find($id);
+        $form = $this->createForm(ProductFormType::class, $product);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $entityManager->flush();
+            return $this->redirectToRoute('back_list_products');
+        }
+
+        return $this->render("backOffice/products/updateProduct.html.twig", [
+            "form_title" => "Modifier un produit",
+            "form_product" => $form->createView(),
+        ]);
+    }
 
 /**
  * @Route("/back/delete-product/{id}", name="delete_product")

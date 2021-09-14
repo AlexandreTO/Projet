@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 class BackCategoriesController extends AbstractController
 {
    /**
-     * @Route("/", name="categories", methods={"GET"})
+     * @Route("/", name="back_categories", methods={"GET"})
      */
     public function index(CategoriesRepository $categoriesRepository): Response
     {
@@ -43,9 +43,33 @@ class BackCategoriesController extends AbstractController
          }
  
          return $this->render('backOffice/categories/addCategory.html.twig', [
+             'form_title' => "Créer une catégorie",
              'form' => $form->createView(),
          ]);
      }
+
+    /**
+ 	* @Route("/edit/{id}", name="update_category")
+	*/
+	public function updateCategory(Request $request, int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $category = $entityManager->getRepository(Categories::class)->find($id);
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $entityManager->flush();
+            return $this->redirectToRoute('categories');
+        }
+
+        return $this->render("backOffice/categories/addCategory.html.twig", [
+            "form_title" => "Modifier une catégorie",
+            "form" => $form->createView(),
+        ]);
+    }
 
     /** @Route("/{id}", name="view_category") */
 	public function viewCategory(Categories $category): Response
