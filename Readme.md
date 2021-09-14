@@ -66,6 +66,7 @@ Pour pouvoir utiliser React, il faut déja avoir `npm` et `node` d'installer sur
 
 ```bash
 npm update
+npm install @symfony/webpack-encore --save-dev
 npm run build
 ```
 

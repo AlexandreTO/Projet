@@ -25,9 +25,6 @@ class UserController extends AbstractController
             // Encode the password after retrieving it from the form
             $user->setPassword($password);
             $em = $this->getDoctrine()->getManager();
-            // add role Admin for tests
-            $roles = ["ROLE_ADMIN"];
-            $user->setRoles($roles);
             $em->persist($user);
             $em->flush();
 

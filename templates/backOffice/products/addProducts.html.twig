@@ -1,7 +1,10 @@
 {% extends "backOffice/base.html.twig" %}
+{% form_theme form_product 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-<h1>{{ form_title }}</h1>
-<h1>IL FAUT AJOUTER LES PROMOS DANS LE FORM</h1>
-{{ form(form_product) }}
+	<div class="container">
+		<h1>{{ form_title }}</h1>
+		<h1>IL FAUT AJOUTER LES PROMOS DANS LE FORM</h1>
+		{{ form(form_product) }}
+	</div>
 {% endblock %}

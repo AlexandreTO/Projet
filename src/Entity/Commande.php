@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
+ * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity(repositoryClass=CommandeRepository::class)
  */
 class Commande
