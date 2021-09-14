@@ -72,4 +72,10 @@ class CartService
 
         return $total;
     }
+
+    public function reset() {
+        $cart = $this->session->get('cart', []);
+
+        $this->session->set('cart', []);
+    }
 }
