@@ -21,11 +21,18 @@ class ProductsView extends Component {
                 date_creation: "",
                 date_modification: "",
             },
+            category: {
+                id: null,
+                title: "",
+                description: "",
+                status: "",
+                date_creation: "",
+                date_modification: "",
+                name_image: "",
+            },
             loading: true
         }
     }
-
-
 
     componentDidMount() {
         this.getProduct(window.location.pathname);
@@ -38,16 +45,29 @@ class ProductsView extends Component {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             }
-        }).then( response => {
-            this.setState({
-                product: response.data,
-                loading: false
-            })
-        })
+        }).then(
+             response => {
+                this.setState({
+                    product: response.data,
+                })
+                axios.get(window.location.origin + `${response.data.categorie}`, {
+                    headers: {
+                        'Content-type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }).then( response => {
+                    this.setState({
+                        category: response.data,
+                        loading: false
+                    })
+                })
+            },
+        )
     }
-    
+   
+
     render() {
-        var {product,loading} = this.state;
+        var {product,category,loading} = this.state;
         return (
             <Fragment>
                 {loading ? (
@@ -63,6 +83,8 @@ class ProductsView extends Component {
                             <div className="col-md-8">
                                 <h1 className="mt-4 mt-md-0">{product.name}</h1>
                                 <h2>{product.prix}€</h2>
+                                <hr/>
+                                <b>Catégorie : {category.title}</b>
                                 <hr/>
                                 <b>Description:</b>
                                 {product.description}
