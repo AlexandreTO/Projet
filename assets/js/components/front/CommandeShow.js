@@ -54,9 +54,7 @@ class CommandeShow extends Component {
                     </tr>
                     <tr>
                         <th>Content</th>
-                       
                     </tr>
-                    
                     <tr>
                         <th>Status</th>
                         <td>{commande.status}</td>

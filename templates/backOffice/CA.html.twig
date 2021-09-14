@@ -3,14 +3,16 @@
 {% block title %}CA index{% endblock %}
 
 {% block body %}
-    <h1>Chiffre d'affaire</h1>
-    {% set CA = 0 %}
-    {% for commande in commandes %}    
-                {% if commande.status == 'Payée' %}
-                    {% for t in commande.content %}
-                        {% set CA = CA+ t.product.prix %}
-                    {% endfor %}
-                {% endif %}
+    <div class="container">
+        <h1>Chiffre d'affaire</h1>
+        {% set CA = 0 %}
+        {% for commande in commandes %}    
+            {% if commande.status == 'Payée' %}
+                {% for t in commande.content %}
+                    {% set CA = CA+ t.product.prix %}
+                {% endfor %}
+            {% endif %}
         {% endfor %}
-   <h3>Chiffre d'affaire total : {{CA}}</h3>
+        <h3>Chiffre d'affaire total : {{CA}}</h3>
+    </div>
 {% endblock %}
