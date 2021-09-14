@@ -4,12 +4,13 @@
 
 {% block body %}
 	<div class="container">
-		<h1>Thanks for your order!</h1>
+		<h1>Paiement accepté !</h1>
 		<p>
-			We appreciate your business! If you have any questions, please
-				email
-			<a href="mailto:orders@example.com">orders@example.com</a>.
+			Panier acheté !
 		</p>
 	</div>
 
+	<pre>
+        {{ dump(app.session) }}
+    </pre>
 {% endblock %}

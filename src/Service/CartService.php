@@ -74,8 +74,7 @@ class CartService
     }
 
     public function reset() {
-        $cart = $this->session->get('cart', []);
-
+        $this->session->get('cart', []);
         $this->session->set('cart', []);
     }
 }
