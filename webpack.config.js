@@ -26,6 +26,7 @@ Encore
     .addEntry('products', './assets/js/components/front/Products.js')
     .addEntry('product_view', './assets/js/components/front/ProductsView.js')
     .addEntry('commande_show', './assets/js/components/front/CommandeShow.js')
+    .addEntry('categories', './assets/js/components/front/Categories.js')
     // .addEntry('user_commands', './assets/js/components/front/UserCommands.js')
     .addEntry('back_product_view', './assets/js/components/back/ProductsView.js')
     .addEntry('back_products', './assets/js/components/back/Products.js')

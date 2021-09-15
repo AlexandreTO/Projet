@@ -35,6 +35,7 @@ class Users extends Component {
         var confirm = window.confirm("Are you sure you want to delete this user?")
         if (confirm){
             axios.delete(window.location.origin + `/back/delete-user/${id}`);
+            window.location.reload();
         }
     }
 
@@ -48,42 +49,40 @@ class Users extends Component {
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div>
-                        <a href={window.location.origin + `/back/users/add`} className="btn btn-dark">Ajouter un utilisateur</a>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Prénom</th>
-                                    <th>Email</th>
-                                    <th>Téléphone</th>
+                    <Fragment>
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                                <th>Email</th>
+                                <th>Rôle</th>
+                                <th>Téléphone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {users.map(user => 
+                                <tr key={user.id}>
+                                    <td>{user.lastName}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.email}</td>
+                                    <td> {user.roles} </td>
+                                    <td>{user.phone}</td>
+                                    <td><a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">Modifier</a></td>
+                                    <td>  
+                                        {user.roles == 'ROLE_USER' &&
+                                            <a href={window.location.origin + `/back/up-to-admin/${user.id}`} className=" btn btn-primary">Passer en admin</a>
+                                        }
+                                        {user.roles != 'ROLE_USER' &&
+                                            <a href={window.location.origin + `/back/pass-to-user/${user.id}`} className=" btn btn-primary">Passer en user</a>
+                                        }
+                                    </td>
+                                    <td>
+                                        <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}>Supprimer</a>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {users.map(user => 
-                                    <tr key={user.id}>
-                                        <td>{user.lastName}</td>
-                                        <td>{user.name}</td>
-                                        <td>{user.email}</td>
-                                        <td>{user.roles}</td>
-                                        <td>{user.phone}</td>
-                                        <td><a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">Modifier</a></td>
-                                        <td>  
-                                            {user.roles == 'ROLE_USER' &&
-                                                 <a href={window.location.origin + `/back/up-to-admin/${user.id}`} className=" btn btn-primary">Passer en admin</a>
-                                            }
-                                            {user.roles != 'ROLE_USER' &&
-                                                 <a href={window.location.origin + `/back/pass-to-user/${user.id}`} className=" btn btn-primary">Passer en user</a>
-                                            }
-                                        </td>
-                                        <td>
-                                            <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}>Supprimer</a>
-                                        </td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
+                            )}
+                        </tbody>
+                    </Fragment>
                 )}
             </Fragment>
         )

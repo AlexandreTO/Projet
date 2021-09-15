@@ -53,10 +53,10 @@ class BackProductsController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/back/update-product/{id}", name="update_product")
-     */
-    public function updateProduct(Request $request, int $id): Response
+	/**
+ 	* @Route("/back/update-product/{id}", name="update_product")
+	*/
+	public function updateProduct(Request $request, int $id): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -64,7 +64,8 @@ class BackProductsController extends AbstractController
         $form = $this->createForm(ProductFormType::class, $product);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if($form->isSubmitted() && $form->isValid())
+        {
             $entityManager->flush();
             return $this->redirectToRoute('back_list_products');
         }
@@ -75,15 +76,15 @@ class BackProductsController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/back/delete-product/{id}", name="delete_product")
-     */
-    public function deleteProduct(int $id): Response
-    {
-        $entityManager = $this->getDoctrine()->getManager();
-        $product = $entityManager->getRepository(Products::class)->find($id);
-        $entityManager->remove($product);
-        $entityManager->flush();
+/**
+ * @Route("/back/delete-product/{id}", name="delete_product")
+ */
+public function deleteProduct(int $id): Response
+{
+    $entityManager = $this->getDoctrine()->getManager();
+    $product = $entityManager->getRepository(Products::class)->find($id);
+    $entityManager->remove($product);
+    $entityManager->flush();
 
         return $this->redirectToRoute("back_list_products");
     }

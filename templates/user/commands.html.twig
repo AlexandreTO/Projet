@@ -23,11 +23,17 @@
         {% for commande in commandes %}
             <tr>
                 <td>{{ commande.id }}</td>
-                
-                {% for item in commande.content %}
-                    <td>{{ item.product.name }} {{ item.quantity }}</td>
-
-                {% endfor %}
+                {% if commande.content != null %}
+                    {% for item in commande.content %}
+                        <td>
+                            <a href="{{ path('view_product', {'id': item.product.id}) }}">
+                                {{ item.product.name }} - {{ item.quantity }}
+                            </a>
+                        </td>
+                    {% endfor %}
+                {% else %}
+                        <td>Vide</td>
+                {% endif %}
                
                 <td>{{ commande.status }}</td>
                 <td>{{ commande.statusSend }}</td>

@@ -3,39 +3,35 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 
-class Products extends Component {
+class Categories extends Component {
     constructor(){
         super();
         this.state = {
-            products: [],
+            categories: [],
             loading: true
         }
     }
 
     componentDidMount() {
-        this.getProducts(window.location.pathname);
+        this.getCategories();
     }
 
-    getProducts(path) {
-        var path = path.split('/');
-        path[1] = path[1].slice(0, -1);
-        axios.get('http://localhost:8000/api/products', {
+    getCategories() {
+        axios.get('http://localhost:8000/api/categories', {
             headers: {
                 'Content-type': 'application/json',
                 'Accept': 'application/json'
             }
         }).then( response => {
-            const filteredProducts = response.data.filter(product => product.categorie == '/api/categories/' + path[2] )
             this.setState({
-                products: filteredProducts,
+                categories: response.data,
                 loading: false
             })
-            
         })
     }
 
     render() {
-        var {products,loading} = this.state;
+        var {categories,loading} = this.state;
         return (
             <Fragment>
                 {loading ? (
@@ -44,18 +40,17 @@ class Products extends Component {
                     </div>
                 ) : (
                     <div className="container">
-                        <h1 className="mt-3 mb-4">Produits</h1>
+                        <h1 className="mt-3 mb-4">Catégories de produits</h1>
                         <div className="row">
-                            {products.map(product =>
+                            {categories.map(categorie =>
                                 <div className="col-md-4">
                                     <div className="card mb-4">
-                                        <img src="https://via.placeholder.com/200x150" alt={product.name } className="card-img-top"/>
+                                        <img src="https://via.placeholder.com/200x150" alt={categorie.title} className="card-img-top"/>
                                         <div className="card-body">
-                                            <h5 className="card-title">{product.name}</h5>
-                                            <p className="card-text">{product.description}</p>
+                                            <h5 className="card-title">{categorie.title}</h5>
+                                            <p className="card-text">{categorie.description}</p>
                                             <div className="d-flex justify-content-between align-item-center">
-                                                <a href={window.location.origin + `/products/${product.id}`} className="btn btn-dark">View details</a>
-                                                <span className="h5 mt-auto">{product.prix}€</span>
+                                                <a href={window.location.origin + `/categories/${categorie.id}/products`} className="btn btn-dark">View details</a>
                                             </div>
                                         </div>
                                     </div>
@@ -69,6 +64,6 @@ class Products extends Component {
     }
 }
 
-ReactDOM.render(<Products/>,document.getElementById('products'))
+ReactDOM.render(<Categories/>,document.getElementById('categories'))
 
-export default Products;
+export default Categories;

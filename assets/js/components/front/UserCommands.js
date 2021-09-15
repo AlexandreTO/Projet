@@ -53,7 +53,7 @@ class UserCommands extends Component {
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <table class="table">
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -66,7 +66,6 @@ class UserCommands extends Component {
                                 <th>DeliveryAddress</th>
                                 <th>DeliveryCity</th>
                                 <th>ZipCode</th>
-                                <th>actions</th>
                             </tr>
                         </thead>
                         <tbody>
