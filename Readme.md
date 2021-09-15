@@ -48,7 +48,7 @@ php bin/console doctrine:migrations:diff
 Et l'intégrer dans la base de données avec :
 
 ```bash
-php bin/console doctrine:migrations:execute 'DoctrineMigrations\VersionDeLaMigration'
+php bin/console doctrine:migrations:migrate
 ```
 
 Pour éviter de commit les identifiants et le nom de la base de données dans le fichier .env, il faut créer un nouveau fichier qui s'appellera `.env.local` qui contient le même contenu que .env. Il faudra ensuite remplacé les identifiants, mots de passe et le nom de la base de données dans `.env.local` et non dans .env. Cela permet de protéger notre base de données.
@@ -69,9 +69,4 @@ npm update
 npm install @symfony/webpack-encore --save-dev
 npm run build
 ```
-
-#### TODO
-
-- Utilisation d'un serveur dédié pour la base de données
-- Finir l'implémentation de Stripe pour le système de paiement
-- Affiner les tests pour le CI/CD
+Note:  Vous devez lancer `npm run build` à chaque fois que vous changez un fichier sous React pour qu'il prenne en compte les modifications.
