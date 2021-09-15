@@ -24,6 +24,8 @@ class UserController extends AbstractController
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             // Encode the password after retrieving it from the form
             $user->setPassword($password);
+            $roles = ['ROLE_ADMIN'];
+            $user->setRoles($roles);
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();

@@ -35,7 +35,6 @@ class Users extends Component {
         var confirm = window.confirm("Are you sure you want to delete this user?")
         if (confirm){
             axios.delete(window.location.origin + `/back/delete-user/${id}`);
-            window.location.reload();
         }
     }
 
@@ -69,23 +68,26 @@ class Users extends Component {
                                     <td>{user.lastName}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td> {user.roles} </td>
+                                    <td>{user.roles}</td>
                                     <td>{user.phone}</td>
                                     <td>{user.address}</td> 
                                     <td>{user.city}</td>
                                     <td>{user.zipcode}</td>
-                                    <td><a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">
+                                    <td>
+                                        <a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">
                                             <i className="fas fa-pen"></i>
                                         </a>
-
+                                    </td>
+                                    <td>
                                         {user.roles == 'ROLE_USER' &&
                                             <a href={window.location.origin + `/back/up-to-admin/${user.id}`} className=" btn btn-primary">Passer en admin</a>
                                         }
                                         {user.roles != 'ROLE_USER' &&
                                             <a href={window.location.origin + `/back/pass-to-user/${user.id}`} className=" btn btn-primary">Passer en user</a>
                                         }
-                                         <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}><i className="fas fa-trash"></i></a>
-
+                                    </td>
+                                    <td>
+                                        <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}><i className="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             )}
