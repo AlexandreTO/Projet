@@ -54,7 +54,7 @@ class Users extends Component {
                                 <th>Nom</th>
                                 <th>Prénom</th>
                                 <th>Email</th>
-                                {/* <th>Rôle</th> */}
+                                <th>Rôle</th>
                                 <th>Téléphone</th>
                                 <th>Adresse</th>
                                 <th>Ville</th>
@@ -68,8 +68,7 @@ class Users extends Component {
                                     <td>{user.lastName}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    {/* user.roles gives an array and is apparently not showing the table if set */}
-                                    {/* <td>{user.roles}</td> */}
+                                    <td>{user.roles}</td> 
                                     <td>{user.phone}</td>
                                     <td>{user.address}</td> 
                                     <td>{user.city}</td>
