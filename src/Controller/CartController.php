@@ -71,9 +71,31 @@ class CartController extends AbstractController
         return $this->redirect($session->url, 303);
     }
 
-    /** @Route("/success_url", name="success_url") */
+    /** 
+     * @Route("/success_url", name="success_url")
+     * Redirect to this url if the payment has been successful
+     */
     public function successUrl(CartService $cartService)
     {
+        /**
+         *  Creation of a new order for the back office after the payment has been realized 
+         *  TODO
+         *  Need to move that outside for cleaner code 
+         */ 
+        $commande = new Commande();
+        $content = (serialize($cartService->getCart()));
+        $commande->setContent($content);
+        $commande->setStatus('paid');
+        $commande->setStatusSend("not sent");
+        $commande->setDateReception(new \DateTime());
+        $commande->setDeliveryAddress($this->getUser()->getAddress());
+        $commande->setDeliveryCity($this->getUser()->getCity());
+        $commande->setZipCode($this->getUser()->getZipcode());
+        $commande->setUser($this->getUser());
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($commande);
+        $entityManager->flush();
+
         $cartService->reset();
         return $this->render('payment/success.html.twig');
     }
