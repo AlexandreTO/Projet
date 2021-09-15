@@ -1,59 +1,61 @@
-{% extends 'base.html.twig' %} 
+{% extends 'base.html.twig' %}
 {% block body %}
-    
-    <div class='container'>
-      <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Status</th>
-                <th>StatusSend</th>
-                <th>DateCreation</th>
-                <th>DateSend</th>
-                <th>DateReception</th>
-                <th>DeliveryAddress</th>
-                <th>DeliveryCity</th>
-                <th>ZipCode</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-      
-        {% for commande in commandes %}
-            <tr>
-                <td>{{ commande.id }}</td>
-                {% if commande.content != null %}
-                    {% for item in commande.content %}
-                        <td>
-                            <a href="{{ path('view_product', {'id': item.product.id}) }}">
-                                {{ item.product.name }} - {{ item.quantity }}
-                            </a>
-                        </td>
-                    {% endfor %}
-                {% else %}
-                        <td>Vide</td>
-                {% endif %}
-               
-                <td>{{ commande.status }}</td>
-                <td>{{ commande.statusSend }}</td>
-                <td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.deliveryAddress }}</td>
-                <td>{{ commande.deliveryCity }}</td>
-                <td>{{ commande.zipCode }}</td>
-                <td>
-                    <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    </div>
+	<div class='container table-responsive'>
+		<h1>Mes commandes</h1>
+		<br>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Produit(s)</th>
+					<th>Statut</th>
+					<th>Statut de l'envoi</th>
+					<th>Date</th>
+					<th>Date envoie</th>
+					<th>Date de réception</th>
+					<th>Adresse</th>
+					<th>Ville</th>
+					<th>Code Postal</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				{% for commande in commandes %}
+					<tr>
+						<td>{{ commande.id }}</td>
+						{% if commande.content != null %}
+							{% for item in commande.content %}
+								<td>
+									<a href="{{ path('view_product', {'id': item.product.id}) }}">
+										{{ item.product.name }} - {{ item.quantity }}
+									</a>
+								</td>
+							{% endfor %}
+						{% else %}
+							<td>Vide</td>
+						{% endif %}
+
+						<td>{{ commande.status }}</td>
+						<td>{{ commande.statusSend }}</td>
+						<td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ commande.deliveryAddress }}</td>
+						<td>{{ commande.deliveryCity }}</td>
+						<td>{{ commande.zipCode }}</td>
+						<td>
+							<a href="{{ path('commande_show', {'id': commande.id}) }}" class="btn btn-primary">show</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="11">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</div>
 {% endblock %}

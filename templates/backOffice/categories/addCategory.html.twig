@@ -1,6 +1,10 @@
 {% extends "backOffice/base.html.twig" %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-{{ form_title }}
-{{ form(form) }}
+	<div class="container">
+		<h1>{{ form_title }}</h1>
+        <hr>
+		{{ form(form) }}
+	</div>
 {% endblock %}
