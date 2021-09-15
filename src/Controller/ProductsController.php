@@ -12,15 +12,6 @@ use App\Repository\ProductsRepository;
 
 class ProductsController extends AbstractController
 {
-	/** @Route("/products", name="list_products") */
-	public function listProducts(ProductsRepository $productsRepository): Response
-	{
-		return $this->render(
-			'products/products.html.twig',
-			['products' => $productsRepository->findBy([], ['name' => 'ASC'])]
-		);
-	}
-
 	/** @Route("/products/{id}", name="view_product") */
 	public function viewProduct(Products $product): Response
 	{

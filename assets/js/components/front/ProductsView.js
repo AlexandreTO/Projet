@@ -30,6 +30,8 @@ class ProductsView extends Component {
     }
 
     getProduct(path) {
+        console.log(path);
+
         axios.get(window.location.origin + `/api${path}`, {
             headers: {
                 'Content-type': 'application/json',
