@@ -30,9 +30,4 @@ class BackCAController extends AbstractController
             'commandes' => $commandes,
         ]);
     }
-
-
- 
-
-
 }

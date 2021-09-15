@@ -24,10 +24,9 @@ class UserController extends AbstractController
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             // Encode the password after retrieving it from the form
             $user->setPassword($password);
+            /* $roles = ['ROLE_ADMIN'];
+            $user->setRoles($roles); */
             $em = $this->getDoctrine()->getManager();
-            // add role Admin for tests
-            $roles = ["ROLE_ADMIN"];
-            $user->setRoles($roles);
             $em->persist($user);
             $em->flush();
 
@@ -47,10 +46,10 @@ class UserController extends AbstractController
         $commandes = $commandeRepository->findBy(
             ['user' => $id]
         );
-        foreach ($commandes as $commande){
+        foreach ($commandes as $commande) {
             $content = fgets($commande->getContent());
             $unserial = unserialize($content);
-            $commande   ->setContent($unserial);
+            $commande->setContent($unserial);
         }
         return $this->render('user/commands.html.twig', [
             'commandes' => $commandes,

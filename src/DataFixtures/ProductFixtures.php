@@ -6,7 +6,6 @@ use App\Entity\Products;
 use App\Entity\Categories;
 use App\Entity\Promotions;
 use App\DataFixtures\CategorieFixtures;
-use App\DataFixtures\PromotionsFixtures;
 use Faker\Factory;
 use Faker\Generator;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -36,18 +35,9 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 $refNum = 1;
             }
 
-            try {
-                $refNum1 = random_int(1, PromotionsFixtures::NB_PROMOTIONS) ?? 0;
-            } catch (\Throwable $th) {
-                $refNum1 = 1;
-            }
-
             // Get Reference from the Categorie table
             /** @var Categories $categorie */
             $categorie = $this->getReference('categorie_' . $refNum);
-
-            /** @var Promotions $promotions */
-            $promotions = $this->getReference('promotion_' . $refNum1);
 
             $product = new Products();
             $product->setName($this->fakerGenerator->word);
@@ -59,7 +49,6 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             $product->setQuantite($this->fakerGenerator->randomDigitNotNull);
             $product->setCategorie($categorie);
             $product->setSlug($this->fakerGenerator->slug);
-            $product->setCodePromo($promotions);
 
             $manager->persist($product);
         }
@@ -67,6 +56,6 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
 
     public function getDependencies()
     {
-        return array(CategorieFixtures::class, PromotionsFixtures::class);
+        return array(CategorieFixtures::class);
     }
 }

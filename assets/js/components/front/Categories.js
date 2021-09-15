@@ -51,7 +51,6 @@ class Categories extends Component {
                                             <p className="card-text">{categorie.description}</p>
                                             <div className="d-flex justify-content-between align-item-center">
                                                 <a href={window.location.origin + `/categories/${categorie.id}/products`} className="btn btn-dark">View details</a>
-                                                <span className="h5 mt-auto">{categorie.id}€</span>
                                             </div>
                                         </div>
                                     </div>

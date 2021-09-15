@@ -90,6 +90,15 @@ class User implements UserInterface
      */
     private $commandes;
 
+    /** @ORM\Column(type="string", length=255) */
+    private $address;
+
+    /** @ORM\Column(type="string", length=255) */
+    private $city;
+
+    /** @ORM\Column(type="integer", length=5) */
+    private $zipcode;
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
@@ -204,6 +213,42 @@ class User implements UserInterface
     public function setDateCreation(\DateTimeInterface $dateCreation): self
     {
         $this->dateCreation = $dateCreation;
+
+        return $this;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getZipcode(): ?int
+    {
+        return $this->zipcode;
+    }
+
+    public function setZipcode(int $zipcode): self
+    {
+        $this->zipcode = $zipcode;
 
         return $this;
     }

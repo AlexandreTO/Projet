@@ -22,13 +22,11 @@
 				{% for item in items %}
 					<tr>
 						<td>{{ item.product.name }}</td>
-						<td>{{ item.product.prix }}
-							€</td>
+						<td>{{ item.product.prix }} €</td>
 						<td>{{ item.quantity }}</td>
-						<td>{{ item.product.prix * item.quantity }}
-							€</td>
+						<td>{{ item.product.prix * item.quantity }} €</td>
 						<td>
-							<a href="{{path('cart_remove',{'id': item.product.id})}}" class="btn btn-danger btn-sm">
+							<a href="{{path('cart_remove', {'id': item.product.id})}}" class="btn btn-danger btn-sm">
 								<i class="fas fa-trash"></i>
 							</a>
 						</td>
@@ -38,21 +36,23 @@
 			<tfoot>
 				<tr>
 					<td colspan="3" class="text-right">Total :</td>
-					<td>{{ total }}
-						€</td>
+					<td>{{ total }} €</td>
 					<td></td>
 				</tr>
 			</tfoot>
 		</table>
-		<div class="col-xs-12 col-sm-6">
-			<form action="" method="POST" class="container">
-				<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_51JUpY0JWMc8btZuLKMkvRIo3d6XPiv6dndfKBqALIKrxOidGArjgxcOUawmQZwOA35vTjmW0LCDdGjnteLlDFYOv00dIxapNks" data-amount="{{total * 100}}" data-name="Stuff" data-description="Widget" data-currency="EUR" data-locale="fr"></script>
+		<div class="col-xs-12 col-sm-6 container">
+			<form action="/create-checkout-session" method="POST">
+				<button type="submit" class="btn btn-primary">Checkout</button>
 			</form>
+			<a href="{{path('commande_new')}}" class="btn btn-warning btn-sm">
+				<i class="fas fa-plus"></i>
+			</a>
+			<a href="{{path('cart_reset')}}" class="btn btn-danger btn-sm">
+				Videz le panier <i class="fas fa-trash"></i>
+			</a>
 		</div>
 
-		<a href="{{path('commande_new')}}" class="btn btn-danger btn-sm">
-								<i class="fas fa-plus"></i>
-		</a>
 	{% else %}
 		<div class="container">
 			<p>Surprise, c'est vide !</p>

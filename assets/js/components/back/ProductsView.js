@@ -88,6 +88,7 @@ class ProductsView extends Component {
                                 <hr/>
                                 <b>Description:</b>
                                 {product.description}
+                                <br/>
                                 <a href={window.location.origin + `/back/update-product/${product.id}`} className="btn btn-primary">Modifier</a>
                                 <form method="post" action={window.location.origin + `/back/delete-product/${product.id}`} onClick={() => window.confirm('Are you sure you want to delete this product?')}>
                                     <button className="btn btn-danger">Supprimer</button>

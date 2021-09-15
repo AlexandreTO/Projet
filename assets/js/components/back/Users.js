@@ -56,6 +56,10 @@ class Users extends Component {
                                 <th>Email</th>
                                 <th>Rôle</th>
                                 <th>Téléphone</th>
+                                <th>Adresse</th>
+                                <th>Ville</th>
+                                <th>Code Postal</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,10 +68,17 @@ class Users extends Component {
                                     <td>{user.lastName}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.roles}</td>
+                                    <td>{user.roles}</td> 
                                     <td>{user.phone}</td>
-                                    <td><a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">Modifier</a></td>
-                                    <td>  
+                                    <td>{user.address}</td> 
+                                    <td>{user.city}</td>
+                                    <td>{user.zipcode}</td>
+                                    <td>
+                                        <a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">
+                                            <i className="fas fa-pen"></i>
+                                        </a>
+                                    </td>
+                                    <td>
                                         {user.roles == 'ROLE_USER' &&
                                             <a href={window.location.origin + `/back/up-to-admin/${user.id}`} className=" btn btn-primary">Passer en admin</a>
                                         }
@@ -76,7 +87,7 @@ class Users extends Component {
                                         }
                                     </td>
                                     <td>
-                                        <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}>Supprimer</a>
+                                        <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}><i className="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             )}

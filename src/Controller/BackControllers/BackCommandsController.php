@@ -22,7 +22,7 @@ class BackCommandsController extends AbstractController
 
     public function __construct(TokenStorageInterface $token)
     {
-       $this->token = $token;
+        $this->token = $token;
     }
 
     /**
@@ -31,12 +31,12 @@ class BackCommandsController extends AbstractController
     public function index(CommandeRepository $commandeRepository): Response
     {
         $commandes = $commandeRepository->findAll();
-        foreach ($commandes as $commande){
+        foreach ($commandes as $commande) {
             $content = fgets($commande->getContent());
             $unserial = unserialize($content);
             $commande->setContent($unserial);
         }
-     
+
         return $this->render('backOffice/commands/index.html.twig', [
             'commandes' => $commandes,
         ]);
@@ -50,7 +50,7 @@ class BackCommandsController extends AbstractController
         $content = fgets($commande->getContent());
         $unserial = unserialize($content);
         $commande->setContent($unserial);
-        
+
         return $this->render('backOffice/commands/show.html.twig', [
             'commande' => $commande,
         ]);
@@ -81,7 +81,7 @@ class BackCommandsController extends AbstractController
      */
     public function delete(Request $request, Commande $commande): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$commande->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $commande->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($commande);
             $entityManager->flush();

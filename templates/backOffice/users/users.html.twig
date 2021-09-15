@@ -1,10 +1,15 @@
 {% extends 'backOffice/base.html.twig' %}
 
 {% block body %}
-	<div class="container">
-		<h1>Gestion des utilisateurs </h1>
+	<div>
+		<h1>Gestion des utilisateurs
+		</h1>
 		<a href="{{ path('add_user') }}" class="btn btn-dark">Ajouter un utilisateur</a>
-		<table class="table" id="back_users"></table>
+		<br>
+
+		<div class="table-responsive">
+			<table class="table" id="back_users"></table>
+		</div>
 	</div>
 	{{ encore_entry_script_tags('back_users') }}
 {% endblock %}

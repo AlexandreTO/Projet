@@ -40,7 +40,9 @@ class UserFixtures extends Fixture
             ));
             $user->setEmail($this->fakerGenerator->email);
             $user->setPhone($this->fakerGenerator->phoneNumber);
-            $user->setRoles($this->fakerGenerator->words());
+            $user->setAddress($this->fakerGenerator->address);
+            $user->setCity($this->fakerGenerator->city());
+            $user->setZipcode($this->fakerGenerator->numerify('#####'));
 
             $manager->persist($user);
         }

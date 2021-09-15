@@ -3,55 +3,60 @@
 {% block title %}Commande index{% endblock %}
 
 {% block body %}
-    <h1>Commande index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Status</th>
-                <th>StatusSend</th>
-                <th>DateCreation</th>
-                <th>DateSend</th>
-                <th>DateReception</th>
-                <th>DeliveryAddress</th>
-                <th>DeliveryCity</th>
-                <th>ZipCode</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-      
-        {% for commande in commandes %}
-            <tr>
-                <td>{{ commande.id }}</td>                
-                {% for item in commande.content %}
-                    <td>{{ item.product.name }} {{ item.quantity }}</td>
+	<h1>Commande index</h1>
+	<br/>
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Produit(s)</th>
+					<th>Statut</th>
+					<th>Statut de l'envoi</th>
+					<th>Date</th>
+					<th>Date envoie</th>
+					<th>Date de réception</th>
+					<th>Adresse</th>
+					<th>Ville</th>
+					<th>Code Postal</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
 
-                {% endfor %}
-               
-                <td>{{ commande.status }}</td>
-                <td>{{ commande.statusSend }}</td>
-                <td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ commande.deliveryAddress }}</td>
-                <td>{{ commande.deliveryCity }}</td>
-                <td>{{ commande.zipCode }}</td>
-                <td>
-                    <a href="{{ path('admin_show_command', {'id': commande.id}) }}">show</a>
-                    {{ include('backOffice/commands/_delete_form.html.twig') }}
-                    <a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+				{% for commande in commandes %}
+					<tr>
+						<td>{{ commande.id }}</td>
+						{% for item in commande.content %}
+							<td>{{ item.product.name }}
+								{{ item.quantity }}</td>
 
-    <a href="{{ path('commande_new') }}">Create new</a>
+						{% endfor %}
+
+						<td>{{ commande.status }}</td>
+						<td>{{ commande.statusSend }}</td>
+						<td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
+						<td>{{ commande.deliveryAddress }}</td>
+						<td>{{ commande.deliveryCity }}</td>
+						<td>{{ commande.zipCode }}</td>
+						<td>
+							<a href="{{ path('admin_show_command', {'id': commande.id}) }}" class="btn btn-primary"><i class="fas fa-align-justify"></i></a>
+							<a href="{{ path('commande_edit', {'id': commande.id}) }}" class="btn btn-warning">
+								<i class="fas fa-pen"></i>
+							</a>
+							{{ include('backOffice/commands/_delete_form.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="11">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<a href="{{ path('commande_new') }}" class="btn btn-primary">Create new</a>
 {% endblock %}
