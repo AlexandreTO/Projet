@@ -1,8 +1,9 @@
 {% extends "backOffice/base.html.twig" %}
 {% form_theme form_product 'bootstrap_4_layout.html.twig' %}
-
+{% block title %}Game Component | Modifications
+{% endblock %}
 {% block body %}
-    <div class="container">
+    <div class="container bg-light">
         <h1>{{ form_title }}</h1>
         {{ form(form_product) }}
     </div>

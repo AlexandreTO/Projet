@@ -1,14 +1,19 @@
 {% extends 'backOffice/base.html.twig' %}
-
+{% block title %}Game Component | Utilisateurs
+{% endblock %}
 {% block body %}
-	<div>
-		<h1>Gestion des utilisateurs
+	<div class="container-fluid bg-light">
+		<h1 class="text-center pt-2 pb-2">Gestion des utilisateurs
 		</h1>
-		<a href="{{ path('add_user') }}" class="btn btn-dark">Ajouter un utilisateur</a>
-		<br>
-
-		<div class="table-responsive">
+	
+		<div class="row">
+		<div class="table-responsive col-10">
 			<table class="table" id="back_users"></table>
+		</div>
+		<div class="col-2">
+				<a href="{{ path('add_user') }}" class="btn btn-primary">Ajouter un utilisateur</a>
+
+		</div>
 		</div>
 	</div>
 	{{ encore_entry_script_tags('back_users') }}

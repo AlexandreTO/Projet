@@ -50,11 +50,11 @@ class ProductsView extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'container row text-center'}>
+                    <div className={'d-flex justify-content-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div className="container">
+                    <div className="container bg-light">
                         <div className="row mt-3 mb-4">
                             <div className="col-md-4">
                                 <img src="https://via.placeholder.com/600x400" alt={product.name} className="img-fluid"/>
@@ -63,11 +63,16 @@ class ProductsView extends Component {
                                 <h1 className="mt-4 mt-md-0">{product.name}</h1>
                                 <h2>{product.prix}€</h2>
                                 <hr/>
-                                <b>Description:</b>
-                                {product.description}
-                                <form className="mt-4 p-4 bg-light" method="post">
-                                    <a className="btn btn-info" href={window.location.origin + `/cart/add/${product.id}`}>Add to Cart</a>
-                                </form>
+                                <b>Description:</b> <p>{product.description}</p>
+                                <b>Quantité restante :</b><p>{product.quantite}</p>
+                                {product.quantite !== 0 &&
+                                  <form className="mt-4 p-4 bg-light" method="post">
+                                    <a className="btn btn-info" href={window.location.origin + `/cart/add/${product.id}`}>Ajouter ce produit au panier</a>
+                                  </form>
+                                }
+                                {product.quantite == 0 &&   
+                                    <h1>Produit indisponible</h1>
+                                }
                             </div>
                         </div>
                     </div>

@@ -56,7 +56,6 @@ class UserCommands extends Component {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Content</th>
                                 <th>Status</th>
                                 <th>StatusSend</th>
@@ -71,7 +70,7 @@ class UserCommands extends Component {
                         <tbody>
                         {commands.map(command => 
                             <tr>
-                                <td>{ command.id }</td>
+                                
                                 
                                 {command.content.map(item => 
                                     <td>{ item.product.name } { item.quantity }</td>
@@ -86,7 +85,7 @@ class UserCommands extends Component {
                                 <td>{ command.deliveryCity }</td>
                                 <td>{ command.zipCode }</td>
                                 <td>
-                                    <a href={window.location.origin + `/commands/${command.id}`}>show</a>
+                                    <a href={window.location.origin + `/commands/${command.id}`}>Plus</a>
                                 </td>
                             </tr>
                         )}
