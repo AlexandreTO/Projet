@@ -3,10 +3,10 @@
 {% block title %}Edit Commande{% endblock %}
 
 {% block body %}
-    <h1>Edit Commande</h1>
+    <div class="container bg-light">
+    <h1 class="text-center">Modificitation du commande</h1>
 
     {{ include('./commande/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('commands_index') }}">back to list</a>
+</div>
 
 {% endblock %}

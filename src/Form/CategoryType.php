@@ -17,7 +17,7 @@ class CategoryType extends AbstractType
             ->add('description')
             ->add('status')
             ->add('name_image')
-            ->add('submit', SubmitType::class)
+            ->add('Valider', SubmitType::class)
         ;
     }
 

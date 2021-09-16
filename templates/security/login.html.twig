@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %} 
-{% block title %}Log in!{% endblock %} 
+{% block title %}Game Component | Connexion{% endblock %} 
 {% block body %}
 <div class="container">
 	<form method="post">
@@ -10,33 +10,38 @@
 		{% endif %} 
 		{% if app.user %}
 			<div class="mb-3">
-				You are logged in as {{ app.user.username }},
-				<a href="{{ path('app_logout') }}">Logout</a>
+				Vous êtes connecté en tant que {{ app.user.username }},
+				<a href="{{ path('app_logout') }}">Déconnexion</a>
 			</div>
 		{% endif %}
 
-		<h1 class="h3 mb-3 font-weight-normal text-center">Veuillez vous connecter</h1>
-		<label for="inputUsername">Nom d'utilisateur</label>
-		<input
-			type="text"
-			value="{{ last_username }}"
-			name="username"
-			id="inputUsername"
-			class="form-control"
-			autocomplete="username"
-			required
-			autofocus
-		/>
-		<label for="inputPassword">Password</label>
-		<input
-			type="password"
-			name="password"
-			id="inputPassword"
-			class="form-control"
-			autocomplete="current-password"
-			required
-		/>
-
+		<h1 class="h3 mb-3 mt-3 font-weight-normal text-center">Veuillez vous connecter</h1>
+		<div class="form-row ">
+            <div class="form-group col-md-12">
+				<label for="inputUsername">Nom d'utilisateur</label>
+				<input
+					type="text"
+					value="{{ last_username }}"
+					name="username"
+					id="inputUsername"
+					class="form-control"
+					autocomplete="username"
+					required
+					autofocus
+				/>
+		 	</div>
+			<div class="form-group col-md-12">
+				<label for="inputPassword">Mot de passe</label>
+				<input
+					type="password"
+					name="password"
+					id="inputPassword"
+					class="form-control"
+					autocomplete="current-password"
+					required
+				/>
+			</div>	 
+	 	</div>
 		<input
 			type="hidden"
 			name="_csrf_token"
@@ -52,7 +57,7 @@
 		</div>
 		#}
 
-		<button class="btn btn-lg btn-primary" type="submit">Sign in</button>
+		<button class="btn btn-lg btn-primary" type="submit">Se connecter</button>
 	</form>
 </div>
 {% endblock %}

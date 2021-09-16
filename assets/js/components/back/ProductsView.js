@@ -71,11 +71,11 @@ class ProductsView extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'container row text-center'}>
+                    <div className={'d-flex justify-content-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div className="container">
+                    <div className="container bg-light">
                         <div className="row mt-3 mb-4">
                             <div className="col-md-4">
                                 <img src="https://via.placeholder.com/600x400" alt={product.name} className="img-fluid"/>
@@ -86,13 +86,18 @@ class ProductsView extends Component {
                                 <hr/>
                                 <b>Catégorie : {category.title}</b>
                                 <hr/>
+                                <b>Quantité: </b>
+                                {product.quantite}
+                                <hr/>
                                 <b>Description:</b>
                                 {product.description}
-                                <br/>
-                                <a href={window.location.origin + `/back/update-product/${product.id}`} className="btn btn-primary">Modifier</a>
-                                <form method="post" action={window.location.origin + `/back/delete-product/${product.id}`} onClick={() => window.confirm('Are you sure you want to delete this product?')}>
-                                    <button className="btn btn-danger">Supprimer</button>
-                                </form>
+                                <hr/>
+                                <div class="row">
+                                    <form method="post" action={window.location.origin + `/back/delete-product/${product.id}`} onClick={() => window.confirm('Etes-vous sûr de vouloir supprimer ce produit?')}>
+                                        <button className="btn btn-danger">Supprimer</button>
+                                    </form>
+                                    <a href={window.location.origin + `/back/update-product/${product.id}`} className="btn btn-primary">Modifier</a>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -2,62 +2,60 @@
 {% block title %}Panier
 {% endblock %}
 {% block body %}
-	<div class="bg-light p-3 text-center">
-		<h1>Votre panier</h1>
+	<div class="container bg-light">
+		<div class=" p-3 text-center">
+			<h1>Votre panier</h1>
+		</div>
+		<div class="row">
+			{% if items | length > 0 %}
+				<table class="table col-8">
+					<thead>
+						<tr>
+							<th>Produit</th>
+							<th>Prix</th>
+							<th>Quantité</th>
+							<th>Total</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in items %}
+							<tr>
+								<td>{{ item.product.name }}</td>
+								<td>{{ item.product.prix }} €</td>
+								<td>{{ item.quantity }}</td>
+								<td>{{ item.product.prix * item.quantity }} €</td>
+								<td>
+									<a href="{{path('cart_remove', {'id': item.product.id})}}" class="btn btn-danger btn-sm">
+										<i class="fas fa-trash"></i>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3" class="text-right"><b>Total :</b></td>
+							<td>{{ total }} €</td>
+							<td></td>
+						</tr>
+					</tfoot>
+				</table>
+				<div class="col-4">
+					<form action="/create-checkout-session" method="POST">
+						<button type="submit" class="btn btn-primary">Passer la commande</button>
+						<a href="{{path('cart_reset')}}" class="btn btn-danger">
+						Vider le panier <i class="fas fa-trash"></i>
+						</a>
+					</form>
+				</div>
+			{% else %}
+				<div class="container">
+					<p class="text-center">Votre panier est vide !</p>
+				</div>
+			{% endif %}
+
+			{% set filter = app.session.get('cart') %}
+		</div>
 	</div>
-
-	{% if items | length > 0 %}
-		<table class="table container">
-			<thead>
-				<tr>
-					<th>Produit</th>
-					<th>Prix</th>
-					<th>Quantité</th>
-					<th>Total</th>
-					<th></th>
-				</tr>
-			</thead>
-			<tbody>
-
-				{% for item in items %}
-					<tr>
-						<td>{{ item.product.name }}</td>
-						<td>{{ item.product.prix }} €</td>
-						<td>{{ item.quantity }}</td>
-						<td>{{ item.product.prix * item.quantity }} €</td>
-						<td>
-							<a href="{{path('cart_remove', {'id': item.product.id})}}" class="btn btn-danger btn-sm">
-								<i class="fas fa-trash"></i>
-							</a>
-						</td>
-					</tr>
-				{% endfor %}
-			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="3" class="text-right">Total :</td>
-					<td>{{ total }} €</td>
-					<td></td>
-				</tr>
-			</tfoot>
-		</table>
-		<div class="col-xs-12 col-sm-6 container">
-			<form action="/create-checkout-session" method="POST">
-				<button type="submit" class="btn btn-primary">Checkout</button>
-			</form>
-			<a href="{{path('commande_new')}}" class="btn btn-warning btn-sm">
-				<i class="fas fa-plus"></i>
-			</a>
-			<a href="{{path('cart_reset')}}" class="btn btn-danger btn-sm">
-				Videz le panier <i class="fas fa-trash"></i>
-			</a>
-		</div>
-
-	{% else %}
-		<div class="container">
-			<p>Surprise, c'est vide !</p>
-		</div>
-	{% endif %}
-
-	{% set filter = app.session.get('cart') %}
 {% endblock %}

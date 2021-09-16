@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>
-			{% block title %}Welcome!
+			{% block title %}Game Component | Back
 			{% endblock %}
 		</title>
 		{% block stylesheets %}
-			<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.css"/>
+			<link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css"/>
 			<link
 				rel="stylesheet"
 				href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -31,7 +31,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor02">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="/">Home
 							<span class="sr-only">(current)</span>
 						</a>
@@ -76,7 +76,7 @@
 					<li class="nav-item">
 
 						{% if app.user %}
-							<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+							<a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
 						{% else %}
 							<a class="nav-link" href="{{ path('app_login') }}">
 								Connexion

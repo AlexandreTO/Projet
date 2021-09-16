@@ -27,7 +27,7 @@ class ProductFormType extends AbstractType
                 'class' => Categories::class,
                 'choice_label' => 'title',
             ])
-            ->add('submit', SubmitType::class)
+            ->add('Ajouter', SubmitType::class)
         ;
     }
 

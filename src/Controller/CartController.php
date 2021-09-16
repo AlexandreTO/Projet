@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Commande;
+use App\Entity\Products;
 use App\Service\CartService;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
@@ -86,12 +87,22 @@ class CartController extends AbstractController
         $content = (serialize($cartService->getCart()));
         $commande->setContent($content);
         $commande->setStatus('Payée');
-        $commande->setStatusSend("not sent");
-        $commande->setDateReception(new \DateTime());
+        $commande->setStatusSend("Envoyé");
+        $commande->setDateSend(new \DateTime());
         $commande->setDeliveryAddress($this->getUser()->getAddress());
         $commande->setDeliveryCity($this->getUser()->getCity());
         $commande->setZipCode($this->getUser()->getZipcode());
         $commande->setUser($this->getUser());
+
+        $products = $cartService->getCart();
+            foreach ($products as $item) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $product = $entityManager->getRepository(Products::class)->find($item['product']->getId());
+                $product->setQuantite($product->getQuantite() - $item['quantity']);
+                $entityManager->persist($product);
+                $entityManager->flush();
+            }
+
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($commande);
         $entityManager->flush();

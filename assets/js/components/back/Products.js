@@ -35,14 +35,17 @@ class Products extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'container row text-center'}>
+                    <div className={'d-flex justify-content-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div className="container">
-                        <h1 className="mt-3 mb-4">Gestion des produits</h1>
-                        <a href={window.location.origin + `/back/add-product`} className="btn btn-dark">Ajouter un produit</a>
-                         <a href={window.location.origin + `/back/add_promotions`} className="btn btn-dark">Ajouter une promotion</a>
+                    <div className="container bg-light">
+                        <h1 className="text-center pt-2 pb-2">Gestion des produits</h1>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href={window.location.origin + `/back/add-product`} className="btn btn-primary">Ajouter un produit</a>
+                            <a href={window.location.origin + `/back/add_promotions`} className="btn btn-primary">Ajouter une promotion</a>
+                        </div>
+                        
                         <div className="row mt-2">
                             {products.map(product =>
                                 <div className="col-md-4" key={product.id}>
@@ -50,9 +53,9 @@ class Products extends Component {
                                         <img src="https://via.placeholder.com/200x150" alt="{{ product.name }}" className="card-img-top"/>
                                         <div className="card-body">
                                             <h5 className="card-title">{product.name}</h5>
-                                            <p className="card-text">{product.description}</p>
+                                            <p className="card-text overflow-auto" style={{height: 120 + 'px'}}>{product.description}</p>
                                             <div className="d-flex justify-content-between align-item-center">
-                                                <a href={window.location.origin + `/back/products/${product.id}`} className="btn btn-dark">View details</a>
+                                                <a href={window.location.origin + `/back/products/${product.id}`} className="btn btn-dark">Plus d'infos</a>
                                                 <span className="h5 mt-auto">{product.prix}
                                                     €</span>
                                             </div>
