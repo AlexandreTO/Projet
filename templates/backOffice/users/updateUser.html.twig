@@ -1,7 +1,9 @@
 {% extends "backOffice/base.html.twig" %}
+{% block title %}Game Component | Modifications
+{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container bg-light">
         {{ form_start(form) }}
         <h1>{{ form_title }}</h1>
         <div class="form-row">
@@ -55,6 +57,34 @@
                     ) }}
                     {{ form_errors(form) }}
                 </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    {{ form_label(form.address) }}
+                    {{ form_widget(
+                        form.address,
+                        {'attr' : {'class': 'form-control', 'placeholder': 'Adresse'}}
+                        ) }}
+                        {{ form_errors(form) }}
+                </div>
+                <div class="form-group col-md-4">
+                        {{ form_label(form.city) }}
+                        {{ form_widget(
+                            form.city,
+                        {'attr' : {'class': 'form-control', 'placeholder': 'Ville'}}
+                        ) }}
+                        {{ form_errors(form) }}
+                </div>
+                  <div class="form-group col-md-4">
+                        {{ form_label(form.zipcode) }}
+                        {{ form_widget(
+                            form.zipcode,
+                        {'attr' : {'class': 'form-control', 'placeholder': 'Code Postal'}}
+                        ) }}
+                        {{ form_errors(form) }}
+                </div>
+            </div>
+
                 <button type="submit" class="btn btn-primary">Modifier un utilisateur</button>
             </div>
         {{ form_end(form) }}

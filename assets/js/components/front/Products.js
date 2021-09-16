@@ -39,12 +39,12 @@ class Products extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'container row text-center'}>
+                    <div className={'d-flex justify-content-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
-                    <div className="container">
-                        <h1 className="mt-3 mb-4">Produits</h1>
+                    <div className="container bg-light">
+                        <h1 className="d-flex justify-content-center pb-4 pt-4">Les produits de cette catégorie</h1>
                         <div className="row">
                             {products.map(product =>
                                 <div className="col-md-4">
@@ -52,9 +52,9 @@ class Products extends Component {
                                         <img src="https://via.placeholder.com/200x150" alt={product.name } className="card-img-top"/>
                                         <div className="card-body">
                                             <h5 className="card-title">{product.name}</h5>
-                                            <p className="card-text">{product.description}</p>
+                                            <p className="card-text overflow-auto" style={{height: 120 + 'px'}}>{product.description}</p>
                                             <div className="d-flex justify-content-between align-item-center">
-                                                <a href={window.location.origin + `/products/${product.id}`} className="btn btn-dark">View details</a>
+                                                <a href={window.location.origin + `/products/${product.id}`} className="btn btn-dark">Plus d'infos</a>
                                                 <span className="h5 mt-auto">{product.prix}€</span>
                                             </div>
                                         </div>

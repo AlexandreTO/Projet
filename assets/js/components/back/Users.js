@@ -29,12 +29,15 @@ class Users extends Component {
             })
         })
     }
-
+   
     handleOnClick(e, id) {
         e.preventDefault();
         var confirm = window.confirm("Are you sure you want to delete this user?")
         if (confirm){
-            axios.delete(window.location.origin + `/back/delete-user/${id}`);
+            axios.delete(window.location.origin + `/back/delete-user/${id}`)
+            .then(response => {
+                window.location.reload();
+            });
         }
     }
 
@@ -44,7 +47,7 @@ class Users extends Component {
         return (
             <Fragment>
                 {loading ? (
-                    <div className={'container row text-center'}>
+                    <div className={'d-flex justify-content-center'}>
                         <span className="fa fa-spin fa-spinner fa-4x"></span>
                     </div>
                 ) : (
@@ -57,8 +60,6 @@ class Users extends Component {
                                 <th>Rôle</th>
                                 <th>Téléphone</th>
                                 <th>Adresse</th>
-                                <th>Ville</th>
-                                <th>Code Postal</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -68,25 +69,19 @@ class Users extends Component {
                                     <td>{user.lastName}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.roles}</td> 
+                                    <td>{user.roles[0]}</td> 
                                     <td>{user.phone}</td>
-                                    <td>{user.address}</td> 
-                                    <td>{user.city}</td>
-                                    <td>{user.zipcode}</td>
+                                    <td>{user.address}, {user.city}, {user.zipcode}</td> 
                                     <td>
                                         <a href={window.location.origin + `/back/update-user/${user.id}`} className=" btn btn-primary">
                                             <i className="fas fa-pen"></i>
                                         </a>
-                                    </td>
-                                    <td>
                                         {user.roles == 'ROLE_USER' &&
                                             <a href={window.location.origin + `/back/up-to-admin/${user.id}`} className=" btn btn-primary">Passer en admin</a>
                                         }
                                         {user.roles != 'ROLE_USER' &&
                                             <a href={window.location.origin + `/back/pass-to-user/${user.id}`} className=" btn btn-primary">Passer en user</a>
                                         }
-                                    </td>
-                                    <td>
                                         <a className="btn btn-danger" onClick={e => this.handleOnClick(e, user.id)}><i className="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
