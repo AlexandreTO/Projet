@@ -32,7 +32,7 @@ class Users extends Component {
    
     handleOnClick(e, id) {
         e.preventDefault();
-        var confirm = window.confirm("Are you sure you want to delete this user?")
+        var confirm = window.confirm("Etes-vous sûr de vouloir supprimer cet utilisateur?")
         if (confirm){
             axios.delete(window.location.origin + `/back/delete-user/${id}`)
             .then(response => {
