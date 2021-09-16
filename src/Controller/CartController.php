@@ -26,7 +26,19 @@ class CartController extends AbstractController
     /** @Route("/cart/add/{id}", name="cart_add") */
     public function addProduct(int $id, CartService $cartService)
     {
-        $cartService->add($id);
+        $entityManager = $this->getDoctrine()->getManager();
+        $products = $cartService->getCart();
+        if($products != null){
+            foreach ($products as $item) {
+                if($item['product']->getId() == $id && $item['quantity'] < $entityManager->getRepository(Products::class)->find($item['product']->getId())->getQuantite())
+                {
+                    $cartService->add($id);
+                }
+            }
+        } else {
+            $cartService->add($id);
+        }
+          
         return $this->redirectToRoute('cart_index');
     }
 
