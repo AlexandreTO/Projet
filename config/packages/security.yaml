@@ -34,6 +34,7 @@ security:
   # Note: Only the *first* access control that matches will be used
   access_control:
     - { path: ^/cart, roles: ROLE_USER }
+    - { path: ^/user, roles: ROLE_USER }
     - { path: '^/back', roles: ROLE_ADMIN }
 
     # - { path: ^/profile, roles: ROLE_USER }
