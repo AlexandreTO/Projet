@@ -39,7 +39,7 @@ class BackCategoriesController extends AbstractController
              $em->persist($category);
              $em->flush();
  
-             return $this->redirectToRoute("categories");
+             return $this->redirectToRoute("back_categories");
          }
  
          return $this->render('backOffice/categories/addCategory.html.twig', [
@@ -62,7 +62,7 @@ class BackCategoriesController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
             $entityManager->flush();
-            return $this->redirectToRoute('categories');
+            return $this->redirectToRoute('back_categories');
         }
 
         return $this->render("backOffice/categories/addCategory.html.twig", [
@@ -89,6 +89,6 @@ class BackCategoriesController extends AbstractController
         $entityManager->remove($category);
         $entityManager->flush();
 
-        return $this->redirectToRoute("categories");
+        return $this->redirectToRoute("back_categories");
     }
 }

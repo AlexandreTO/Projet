@@ -1,66 +1,60 @@
 {% extends 'backOffice/base.html.twig' %}
 
-{% block title %}Commande{% endblock %}
+{% block title %}Game Component | Commande{% endblock %}
 
 {% block body %}
+	<div class="container bg-light">
+		<h1 class="text-center pt-2 pb-2">Commande numéro :{{commande.id}}</h1>
 
-	<div class="container">
-		<h1>Commande</h1>
+		<div class="row">
+		<a class="btn btn-primary" href="{{ path('commande_edit', {'id': commande.id}) }}">Modifier</a>
+
+		{{ include('backOffice/commands/_delete_form.html.twig') }}
+		</div>
+
 
 		<table class="table">
 			<tbody>
 				<tr>
-					<th>Id</th>
+					<th>Numéro de commande</th>
 					<td>{{ commande.id }}</td>
 				</tr>
-
 				<tr>
-					<th>Content</th>
-					{% for item in commande.content %}
-						<td>{{ item.product.name }}
-							{{ item.quantity }}</td>
-
-					{% endfor %}
+					<th>Contenu de la commande</th>
+					<td>
+						{% for item in commande.content %}
+							<p><b>Produit: </b><a href="{{ path('view_product', {'id': item.product.id}) }}">{{ item.product.name }}</a>
+								<b>Quantité: </b>{{ item.quantity }}</p>
+						{% endfor %}
+					</td>
 				</tr>
+
 				<tr>
-					<th>Status</th>
+					<th>Etat du paiement</th>
 					<td>{{ commande.status }}</td>
 				</tr>
 				<tr>
-					<th>StatusSend</th>
+					<th>Etat de l'envoie</th>
 					<td>{{ commande.statusSend }}</td>
 				</tr>
 				<tr>
-					<th>DateCreation</th>
+					<th>Date d'achat</th>
 					<td>{{ commande.dateCreation ? commande.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
 				</tr>
 				<tr>
-					<th>DateSend</th>
+					<th>Date de l'envoie</th>
 					<td>{{ commande.dateSend ? commande.dateSend|date('Y-m-d H:i:s') : '' }}</td>
 				</tr>
 				<tr>
-					<th>DateReception</th>
+					<th>Date de reception</th>
 					<td>{{ commande.dateReception ? commande.dateReception|date('Y-m-d H:i:s') : '' }}</td>
 				</tr>
 				<tr>
-					<th>DeliveryAddress</th>
-					<td>{{ commande.deliveryAddress }}</td>
-				</tr>
-				<tr>
-					<th>DeliveryCity</th>
-					<td>{{ commande.deliveryCity }}</td>
-				</tr>
-				<tr>
-					<th>ZipCode</th>
-					<td>{{ commande.zipCode }}</td>
+					<th>Adresse de reception</th>
+					<td>{{ commande.deliveryAddress }}, {{ commande.deliveryCity }}, {{ commande.zipCode }}</td>
 				</tr>
 			</tbody>
 		</table>
 
-		<a href="{{ path('commands_index') }}">back to list</a>
-
-		<a href="{{ path('commande_edit', {'id': commande.id}) }}">edit</a>
-
-		{{ include('backOffice/commands/_delete_form.html.twig') }}
 	</div>
 {% endblock %}
