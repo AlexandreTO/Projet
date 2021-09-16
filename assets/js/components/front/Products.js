@@ -36,6 +36,7 @@ class Products extends Component {
 
     render() {
         var {products,loading} = this.state;
+        console.log(products);
         return (
             <Fragment>
                 {loading ? (
@@ -47,9 +48,10 @@ class Products extends Component {
                         <h1 className="mt-3 mb-4">Produits</h1>
                         <div className="row">
                             {products.map(product =>
-                                <div className="col-md-4">
-                                    <div className="card mb-4">
-                                        <img src="https://via.placeholder.com/200x150" alt={product.name } className="card-img-top"/>
+                                <div className="col-md-4" key={product.id}>
+                                    < div className="card mb-4">
+                                        {/* Show image */}
+                                        <img src={`/imageTest.jpeg`} alt="card-img-top"/> 
                                         <div className="card-body">
                                             <h5 className="card-title">{product.name}</h5>
                                             <p className="card-text">{product.description}</p>

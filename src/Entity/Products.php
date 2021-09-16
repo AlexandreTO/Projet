@@ -8,11 +8,13 @@ use App\Repository\ProductsRepository;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ProductsRepository::class)
  * @ORM\HasLifecycleCallbacks()
  * @ApiResource
+ * @Vich\Uploadable()
  */
 
 class Products
@@ -23,6 +25,12 @@ class Products
 	 * @ORM\Column(type="integer")
 	 */
 	private $id;
+
+	/**
+	 * @var File|null
+	 * @Vich\UploadableField(mapping="product_image", fileNameProperty="image")
+	 */
+	private $imageFile;
 
 	/** 
 	 * @ORM\Column(type="string", length=200)
@@ -244,6 +252,30 @@ class Products
 	public function setDateModification(?\DateTimeInterface $dateModification): self
 	{
 		$this->dateModification = $dateModification;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of imageFile
+	 *
+	 * @return  File|null
+	 */ 
+	public function getImageFile()
+	{
+		return $this->imageFile;
+	}
+
+	/**
+	 * Set the value of imageFile
+	 *
+	 * @param  File|null  $imageFile
+	 *
+	 * @return  self
+	 */ 
+	public function setImageFile($imageFile)
+	{
+		$this->imageFile = $imageFile;
 
 		return $this;
 	}

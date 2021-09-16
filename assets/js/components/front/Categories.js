@@ -32,6 +32,7 @@ class Categories extends Component {
 
     render() {
         var {categories,loading} = this.state;
+        console.log(categories);
         return (
             <Fragment>
                 {loading ? (
@@ -43,9 +44,9 @@ class Categories extends Component {
                         <h1 className="mt-3 mb-4">Catégories de produits</h1>
                         <div className="row">
                             {categories.map(categorie =>
-                                <div className="col-md-4">
+                                <div className="col-md-4" key={categorie.id}>
                                     <div className="card mb-4">
-                                        <img src="https://via.placeholder.com/200x150" alt={categorie.title} className="card-img-top"/>
+                                        <p>{categorie.nameImage}</p>
                                         <div className="card-body">
                                             <h5 className="card-title">{categorie.title}</h5>
                                             <p className="card-text">{categorie.description}</p>
