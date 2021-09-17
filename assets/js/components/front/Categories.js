@@ -43,9 +43,9 @@ class Categories extends Component {
                         <h1 className="d-flex justify-content-center pb-4 pt-4">Toutes nos catégories de produits</h1>
                         <div className="row">
                             {categories.map(categorie =>
-                                <div className="col-md-4">
+                                <div className="col-md-4" key={categorie.id}>
                                     <div className="card mb-4">
-                                        <img src="https://via.placeholder.com/200x150" alt={categorie.title} className="card-img-top"/>
+                                    <img src={`/images/products/${categorie.nameImage}`} className="mw-100" alt="card-img-top"/> 
                                         <div className="card-body">
                                             <h5 className="card-title">{categorie.title}</h5>
                                             <p className="card-text overflow-auto" style={{height: 120 + 'px'}}>{categorie.description}</p>
