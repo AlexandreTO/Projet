@@ -45,7 +45,7 @@ class Categories extends Component {
                             {categories.map(categorie =>
                                 <div className="col-md-4" key={categorie.id}>
                                     <div className="card mb-4">
-                                    <img src={`/images/products/${categorie.nameImage}`} alt="card-img-top"/> 
+                                    <img src={`/images/products/${categorie.nameImage}`} className="mw-100" alt="card-img-top"/> 
                                         <div className="card-body">
                                             <h5 className="card-title">{categorie.title}</h5>
                                             <p className="card-text overflow-auto" style={{height: 120 + 'px'}}>{categorie.description}</p>
