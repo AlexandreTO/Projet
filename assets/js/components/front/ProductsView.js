@@ -47,6 +47,8 @@ class ProductsView extends Component {
     
     render() {
         var {product,loading} = this.state;
+        console.log(product);
+
         return (
             <Fragment>
                 {loading ? (
@@ -57,7 +59,7 @@ class ProductsView extends Component {
                     <div className="container bg-light">
                         <div className="row mt-3 mb-4">
                             <div className="col-md-4">
-                                <img src="https://via.placeholder.com/600x400" alt={product.name} className="img-fluid"/>
+                            <img src={`/images/products/${product.image}`} alt="card-img-top"/> 
                             </div>
                             <div className="col-md-8">
                                 <h1 className="mt-4 mt-md-0">{product.name}</h1>

@@ -53,7 +53,9 @@ class Products
 	 * */
 	private $prix;
 
-	/** @ORM\Column(type="string", length=255)*/
+	/** @ORM\Column(type="string", length=255)
+	 * @var string|null
+	*/
 	private $image;
 
 	/** @ORM\Column(type="boolean")*/
