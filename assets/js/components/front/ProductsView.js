@@ -47,8 +47,6 @@ class ProductsView extends Component {
     
     render() {
         var {product,loading} = this.state;
-        console.log(product);
-
         return (
             <Fragment>
                 {loading ? (

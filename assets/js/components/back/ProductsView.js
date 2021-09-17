@@ -68,7 +68,6 @@ class ProductsView extends Component {
 
     render() {
         var {product,category,loading} = this.state;
-        console.log(product);
 
         return (
             <Fragment>

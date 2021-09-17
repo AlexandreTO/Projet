@@ -32,7 +32,6 @@ class Categories extends Component {
 
     render() {
         var {categories,loading} = this.state;
-        console.log(categories);
         return (
             <Fragment>
                 {loading ? (

@@ -36,7 +36,6 @@ class Products extends Component {
 
     render() {
         var {products,loading} = this.state;
-        console.log(products);
         return (
             <Fragment>
                 {loading ? (
