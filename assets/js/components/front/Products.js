@@ -48,9 +48,8 @@ class Products extends Component {
                         <div className="row">
                             {products.map(product =>
                                 <div className="col-md-4">
-                                    < div className="card mb-4">
-                                        {/* Show image */}
-                                        <img src={`/images/products/${product.image}`} className="mw-100" alt="card-img-top"/> 
+                                    <div className="card mb-4">
+                                        <img src="https://via.placeholder.com/200x150" alt={product.name } className="card-img-top"/>
                                         <div className="card-body">
                                             <h5 className="card-title">{product.name}</h5>
                                             <p className="card-text overflow-auto" style={{height: 120 + 'px'}}>{product.description}</p>

@@ -34,9 +34,7 @@
         "symfony/form": "^5.3",
         "symfony/webpack-encore-bundle": "^1.12",
         "fakerphp/faker": "^1.16",
-        "stripe/stripe-php": "^7.95",
-        "symfony/flex": "^1.15",
-        "vich/uploader-bundle": "^1.18"
+        "stripe/stripe-php": "^7.95"
     },
     "autoload": {
         "psr-4": {

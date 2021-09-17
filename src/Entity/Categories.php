@@ -8,15 +8,12 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-
 
 
 /**
  * @ORM\Entity(repositoryClass=CategoriesRepository::class)
  * @ORM\HasLifecycleCallbacks()
  * @ApiResource
- * @Vich\Uploadable()
  */
 class Categories
 {
@@ -26,13 +23,6 @@ class Categories
      * @ORM\Column(type="integer")
      */
     private $id;
-
-
-    /**
-	 * @var File|null
-	 * @Vich\UploadableField(mapping="category_image", fileNameProperty="nameImage")
-	 */
-	private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -170,28 +160,4 @@ class Categories
 
         return $this;
     }
-
-	/**
-	 * Get the value of imageFile
-	 *
-	 * @return  File|null
-	 */ 
-	public function getImageFile()
-	{
-		return $this->imageFile;
-	}
-
-	/**
-	 * Set the value of imageFile
-	 *
-	 * @param  File|null  $imageFile
-	 *
-	 * @return  self
-	 */ 
-	public function setImageFile($imageFile)
-	{
-		$this->imageFile = $imageFile;
-
-		return $this;
-	}
 }

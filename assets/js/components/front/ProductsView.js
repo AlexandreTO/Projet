@@ -57,7 +57,7 @@ class ProductsView extends Component {
                     <div className="container bg-light">
                         <div className="row mt-3 mb-4">
                             <div className="col-md-4">
-                            <img src={`/images/products/${product.image}`} className="mw-100" alt="card-img-top"/> 
+                                <img src="https://via.placeholder.com/600x400" alt={product.name} className="img-fluid"/>
                             </div>
                             <div className="col-md-8">
                                 <h1 className="mt-4 mt-md-0">{product.name}</h1>

@@ -10,7 +10,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ProductFormType extends AbstractType
 {
@@ -20,9 +19,7 @@ class ProductFormType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('prix')
-            ->add('imageFile', FileType::class, [
-                'required' => false
-            ])
+            ->add('image')
             ->add('status')
             ->add('quantite')
             ->add('slug')
@@ -30,8 +27,7 @@ class ProductFormType extends AbstractType
                 'class' => Categories::class,
                 'choice_label' => 'title',
             ])
-            ->add('submit', SubmitType::class)
-            
+            ->add('Ajouter', SubmitType::class)
         ;
     }
 

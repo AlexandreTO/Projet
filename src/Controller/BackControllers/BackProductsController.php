@@ -66,7 +66,6 @@ class BackProductsController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $entityManager->persist($product);
             $entityManager->flush();
             return $this->redirectToRoute('back_list_products');
         }
