@@ -41,7 +41,7 @@ class Products extends Component {
                 ) : (
                     <div className="container bg-light">
                         <h1 className="text-center pt-2 pb-2">Gestion des produits</h1>
-                        <div class="btn-group" role="group" aria-label="Basic example">
+                        <div className="btn-group" role="group" aria-label="Basic example">
                             <a href={window.location.origin + `/back/add-product`} className="btn btn-primary">Ajouter un produit</a>
                             <a href={window.location.origin + `/back/add_promotions`} className="btn btn-primary">Ajouter une promotion</a>
                         </div>
